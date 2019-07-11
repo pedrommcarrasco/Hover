@@ -1,0 +1,16 @@
+PODS:
+  - SliceControl (1.3.0)
+
+DEPENDENCIES:
+  - SliceControl (from `..`)
+
+EXTERNAL SOURCES:
+  SliceControl:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  SliceControl: 6f4b8a068f35efdecfa00408037a434fa850cb59
+
+PODFILE CHECKSUM: 472c6bdd43948203743cec6a19ad73dd429ea8e0
+
+COCOAPODS: 1.6.0.beta.1

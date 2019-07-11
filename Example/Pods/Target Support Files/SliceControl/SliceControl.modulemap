@@ -1,0 +1,6 @@
+module SliceControl {
+  umbrella header "SliceControl-umbrella.h"
+
+  export *
+  module * { export * }
+}
