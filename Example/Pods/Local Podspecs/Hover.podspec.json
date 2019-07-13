@@ -16,7 +16,7 @@
   },
   "swift_versions": "5.0",
   "platforms": {
-    "ios": "10.0"
+    "ios": "11.0"
   },
   "source_files": "Hover/**/*",
   "exclude_files": "Hover/*.plist",

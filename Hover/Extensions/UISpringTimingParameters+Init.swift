@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Init
 extension UISpringTimingParameters {
     
     convenience init(damping: CGFloat, response: CGFloat, initialVelocity: CGVector = .zero) {
@@ -15,5 +16,4 @@ extension UISpringTimingParameters {
         let damp = 4 * .pi * damping / response
         self.init(mass: 1, stiffness: stiffness, damping: damp, initialVelocity: initialVelocity)
     }
-    
 }

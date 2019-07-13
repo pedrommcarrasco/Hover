@@ -19,28 +19,28 @@ public enum HoverPosition {
 // MARK: - Configuration
 extension HoverPosition {
 
-    func configurePosition(of guide: UILayoutGuide, inside view: UIView) {
+    func configurePosition(of guide: UILayoutGuide, inside view: UIView, with spacing: CGFloat) {
         let positionConstraints: [NSLayoutConstraint]
         switch self {
         case .topLeft:
             positionConstraints = [
-                guide.topAnchor.constraint(equalTo: view.topAnchor),
-                guide.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+                guide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: spacing),
+                guide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: spacing)
             ]
         case .topRight:
             positionConstraints = [
-                guide.topAnchor.constraint(equalTo: view.topAnchor),
-                guide.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+                guide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: spacing),
+                guide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -spacing)
             ]
         case .bottomLeft:
             positionConstraints = [
-                guide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                guide.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+                guide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -spacing),
+                guide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: spacing)
             ]
         case .bottomRight:
             positionConstraints = [
-                guide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                guide.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+                guide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -spacing),
+                guide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -spacing)
             ]
         }
         NSLayoutConstraint.activate(positionConstraints)

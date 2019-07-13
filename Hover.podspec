@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.source = { :git => 'https://github.com/tonymillion/Hover.git', :tag => spec.version.to_s }
     spec.swift_version = '5.0'
 
-    spec.ios.deployment_target  = '10.0'
+    spec.ios.deployment_target  = '11.0'
 
     spec.source_files = 'Hover/**/*'
     spec.exclude_files = "Hover/*.plist"
