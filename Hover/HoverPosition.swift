@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - HoverPosition
-enum HoverPosition {
+public enum HoverPosition {
     case topLeft
     case topRight
     case bottomLeft
@@ -19,28 +19,28 @@ enum HoverPosition {
 // MARK: - Configuration
 extension HoverPosition {
 
-    func configurePosition(of view: UIView, inside parentView: UIView) {
+    func configurePosition(of guide: UILayoutGuide, inside view: UIView) {
         let positionConstraints: [NSLayoutConstraint]
         switch self {
         case .topLeft:
             positionConstraints = [
-                view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
-                view.topAnchor.constraint(equalTo: parentView.topAnchor)
+                guide.topAnchor.constraint(equalTo: view.topAnchor),
+                guide.leadingAnchor.constraint(equalTo: view.leadingAnchor)
             ]
         case .topRight:
             positionConstraints = [
-                view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
-                view.topAnchor.constraint(equalTo: parentView.topAnchor)
+                guide.topAnchor.constraint(equalTo: view.topAnchor),
+                guide.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ]
         case .bottomLeft:
             positionConstraints = [
-                view.leadingAnchor.constraint(equalTo: parentView.leadingAnchor),
-                view.bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
+                guide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                guide.leadingAnchor.constraint(equalTo: view.leadingAnchor)
             ]
         case .bottomRight:
             positionConstraints = [
-                view.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
-                view.bottomAnchor.constraint(equalTo: parentView.bottomAnchor)
+                guide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                guide.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ]
         }
         NSLayoutConstraint.activate(positionConstraints)
@@ -48,7 +48,7 @@ extension HoverPosition {
 }
 
 // MARK: - Sugar
-extension Array where Element == HoverPosition {
+public extension Array where Element == HoverPosition {
 
     static let all: [HoverPosition] = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 }

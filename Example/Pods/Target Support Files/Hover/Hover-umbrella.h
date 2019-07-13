@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SliceControlVersionNumber;
-FOUNDATION_EXPORT const unsigned char SliceControlVersionString[];
+FOUNDATION_EXPORT double HoverVersionNumber;
+FOUNDATION_EXPORT const unsigned char HoverVersionString[];
 

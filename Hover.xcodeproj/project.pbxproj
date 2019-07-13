@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20427AB122D905E7007C5ED0 /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */; };
+		20427AB322D9062B007C5ED0 /* HoverPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB222D9062B007C5ED0 /* HoverPhysics.swift */; };
+		20427AB522D907CE007C5ED0 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */; };
+		20427AB722D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */; };
+		20979A9722D9F80700160A89 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20979A9622D9F80700160A89 /* CGRect+Center.swift */; };
 		20FB2C7022D7E8C100D933D2 /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB2C6F22D7E8C100D933D2 /* HoverView.swift */; };
 		538A853522D8BEDE00225A49 /* HoverPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A853422D8BEDE00225A49 /* HoverPosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
+		20427AB222D9062B007C5ED0 /* HoverPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverPhysics.swift; sourceTree = "<group>"; };
+		20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Init.swift"; sourceTree = "<group>"; };
+		20979A9622D9F80700160A89 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 		209B721422D7ECD5009F3433 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20FB2C6222D7E82300D933D2 /* Hover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FB2C6F22D7E8C100D933D2 /* HoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
@@ -48,19 +58,16 @@
 		20FB2C6422D7E82400D933D2 /* Hover */ = {
 			isa = PBXGroup;
 			children = (
+				20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */,
+				20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */,
+				20427AB222D9062B007C5ED0 /* HoverPhysics.swift */,
+				538A853422D8BEDE00225A49 /* HoverPosition.swift */,
+				20FB2C6F22D7E8C100D933D2 /* HoverView.swift */,
+				20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */,
 				209B721422D7ECD5009F3433 /* Info.plist */,
-				20FB2C6E22D7E86200D933D2 /* Core */,
+				20979A9622D9F80700160A89 /* CGRect+Center.swift */,
 			);
 			path = Hover;
-			sourceTree = "<group>";
-		};
-		20FB2C6E22D7E86200D933D2 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				20FB2C6F22D7E8C100D933D2 /* HoverView.swift */,
-				538A853422D8BEDE00225A49 /* HoverPosition.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20FB2C7022D7E8C100D933D2 /* HoverView.swift in Sources */,
+				20427AB122D905E7007C5ED0 /* CGPoint+Operators.swift in Sources */,
+				20427AB322D9062B007C5ED0 /* HoverPhysics.swift in Sources */,
+				20427AB522D907CE007C5ED0 /* CGPoint+Distance.swift in Sources */,
+				20979A9722D9F80700160A89 /* CGRect+Center.swift in Sources */,
+				20427AB722D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift in Sources */,
 				538A853522D8BEDE00225A49 /* HoverPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

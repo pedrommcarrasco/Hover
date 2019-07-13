@@ -1,19 +1,16 @@
-Pod::Spec.new do |s|
-  s.swift_version = "5.0"
-  s.name         = "Hover"
-  s.version      = "1.0.0"
-  s.summary      = "🎈"
-  s.description  = "🎈"
+Pod::Spec.new do |spec|
+    spec.name = 'Hover'
+    spec.version = '1.0.0'
+    spec.license = { :type => 'MIT', :file => 'LICENSE' }
+    spec.homepage = 'https://github.com/pedrommcarrasco/Hover'
+    spec.authors = { 'Pedro Carrasco' => 'https://twitter.com/pedrommcarrasco' }
+    spec.summary = '🎈 Summary'
+    spec.source = { :git => 'https://github.com/tonymillion/Hover.git', :tag => spec.version.to_s }
+    spec.swift_version = '5.0'
 
-  s.homepage     = "https://github.com/pedrommcarrasco/Hover
-  s.license = { :type => 'MIT', :file => 'LICENSE' }
+    spec.ios.deployment_target  = '10.0'
 
-  s.author    = "Pedro Carrasco"
-  s.social_media_url   = "https://twitter.com/pedrommcarrasco"
+    spec.source_files = 'Hover/**/*'
+    spec.exclude_files = "Hover/*.plist"
 
-  s.platform     = :ios, "10.0"
-  s.source       = { :git => "https://github.com/pedrommcarrasco/Hover.git", :tag => s.version.to_s }
-
-  s.source_files  = "Hover/**/*"
-  s.exclude_files = "Hover/*.plist"
 end
