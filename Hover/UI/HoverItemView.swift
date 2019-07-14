@@ -13,19 +13,27 @@ class HoverItemView: UIStackView {
     
     // MARK: Outlets
     private let button: HoverButton
-    private let label = UILabel()
+    private let label: UILabel = .create {
+        $0.textColor = .white
+    }
     
     // MARK: Properties
     var onTap: (() -> ())?
+    var orientation: Orientation {
+        didSet { adapt(to: orientation) }
+    }
     
     // MARK: Private Properties
     private let item: HoverItem
+    private let size: CGFloat
     
     // MARK: Lifecycle
-    init(with item: HoverItem) {
+    init(with item: HoverItem, orientation: Orientation, size: CGFloat) {
         self.item = item
-        self.label.text = item.title
+        self.orientation = orientation
+        self.size = size
         self.button = HoverButton(with: .color(.white), image: item.image)
+        self.label.text = item.title
         super.init(frame: .zero)
         configure()
     }
@@ -47,25 +55,42 @@ private extension HoverItemView {
     }
     
     func addSubviews() {
-        add(arrangedViews: label, button)
+        adapt(to: orientation)
         
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        NSLayoutConstraint.activate(
+            [
+                button.heightAnchor.constraint(equalToConstant: size),
+                button.widthAnchor.constraint(equalTo: button.heightAnchor)
+            ]
+        )
     }
     
     func setupSubviews() {
-        label.textColor = .white
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
     }
 }
 
-
+// MARK: - Actions
 private extension HoverItemView {
     
     @objc
     func onTapInButton() {
         item.onTap()
         onTap?()
+    }
+}
+
+// MARK: - Condional Constraints
+private extension HoverItemView {
+    
+    func adapt(to orientation: Orientation) {
+        switch orientation {
+        case .leftToRight:
+            label.textAlignment = .left
+            add(arrangedViews: button, label)
+        case .rightToLeft:
+            label.textAlignment = .right
+            add(arrangedViews: label, button)
+        }
     }
 }

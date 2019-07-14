@@ -16,8 +16,18 @@ public enum HoverPosition {
     case bottomRight
 }
 
-// MARK: - CaseIterable
-extension HoverPosition: CaseIterable {}
+// MARK: - Properties
+extension HoverPosition {
+    
+    var orientation: Orientation {
+        switch self {
+        case .topLeft, .bottomLeft:
+            return .leftToRight
+        case .topRight, .bottomRight:
+            return .rightToLeft
+        }
+    }
+}
 
 // MARK: - Configuration
 extension HoverPosition {
@@ -55,3 +65,9 @@ public extension Array where Element == HoverPosition {
 
     static let all: [HoverPosition] = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 }
+
+// MARK: - CaseIterable
+extension HoverPosition: CaseIterable {}
+
+// MARK: - Equatable
+extension HoverPosition: Equatable {}

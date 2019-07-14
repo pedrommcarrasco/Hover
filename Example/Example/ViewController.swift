@@ -1,12 +1,40 @@
 import UIKit
 import Hover
 
+extension UIImage {
+    static var cocoa: UIImage {
+        return UIImage(named: "cocoa")!
+    }
+    
+    static var add: UIImage {
+        return UIImage(named: "Add")!
+    }
+}
+
+extension UIColor {
+    
+    static var lightBlue: UIColor {
+        return UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0)
+    }
+    
+    static var darkBlue: UIColor {
+        return UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)
+    }
+}
+
+
 class ViewController: UIViewController {
     
-    private let hoverView = HoverView(color: .gradient(top: UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0), bottom: UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)),
-                                      image: UIImage(named: "cocoa"),
-                                      buttonSize: 60,
-                                      items: [HoverItem(title: "Example", image: UIImage(named: "Add")!, onTap: {})])
+    
+    private let configuration = HoverConfiguration(icon: .cocoa,
+                                                   color: .gradient(top: .lightBlue, bottom: .darkBlue),
+                                                   size: 60.0,
+                                                   initialPosition: .bottomRight)
+    
+    private lazy var hoverView = HoverView(with: configuration,
+                                           items: [HoverItem(title: "Example", image: .add, onTap: {}),
+                                                   HoverItem(title: "Test", image: .add, onTap: {})])
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,9 @@
 		20427AB122D905E7007C5ED0 /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */; };
 		20427AB522D907CE007C5ED0 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */; };
 		20427AB722D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */; };
+		207F0EAA22DBBAD70009ED1E /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EA922DBBAD70009ED1E /* Anchor.swift */; };
+		207F0EAC22DBBC370009ED1E /* HoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EAB22DBBC370009ED1E /* HoverConfiguration.swift */; };
+		207F0EAE22DBD3770009ED1E /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EAD22DBD3770009ED1E /* Orientation.swift */; };
 		20979A9722D9F80700160A89 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20979A9622D9F80700160A89 /* CGRect+Center.swift */; };
 		209DED6422DA63D100B869AC /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209DED6322DA63D100B869AC /* UIView+Add.swift */; };
 		209DED6622DA6D1B00B869AC /* NSObject+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209DED6522DA6D1B00B869AC /* NSObject+Create.swift */; };
@@ -31,6 +34,9 @@
 		20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
 		20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
 		20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Init.swift"; sourceTree = "<group>"; };
+		207F0EA922DBBAD70009ED1E /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		207F0EAB22DBBC370009ED1E /* HoverConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverConfiguration.swift; sourceTree = "<group>"; };
+		207F0EAD22DBD3770009ED1E /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		20979A9622D9F80700160A89 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 		209B721422D7ECD5009F3433 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209DED6322DA63D100B869AC /* UIView+Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Add.swift"; sourceTree = "<group>"; };
@@ -94,9 +100,12 @@
 		209DED7522DA82A300B869AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				209DED7622DA82A300B869AC /* HoverPosition.swift */,
-				209DED7722DA82A300B869AC /* HoverItem.swift */,
+				207F0EA922DBBAD70009ED1E /* Anchor.swift */,
 				200A2A5E22DB36010034E819 /* HoverColor.swift */,
+				207F0EAB22DBBC370009ED1E /* HoverConfiguration.swift */,
+				209DED7722DA82A300B869AC /* HoverItem.swift */,
+				209DED7622DA82A300B869AC /* HoverPosition.swift */,
+				207F0EAD22DBD3770009ED1E /* Orientation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,11 +227,14 @@
 				209DED6422DA63D100B869AC /* UIView+Add.swift in Sources */,
 				200A2A5F22DB36010034E819 /* HoverColor.swift in Sources */,
 				209DED7822DA82A300B869AC /* Calculator.swift in Sources */,
+				207F0EAC22DBBC370009ED1E /* HoverConfiguration.swift in Sources */,
+				207F0EAE22DBD3770009ED1E /* Orientation.swift in Sources */,
 				20D3C01722DA28AC000664C8 /* UIView+Decorators.swift in Sources */,
 				20427AB722D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift in Sources */,
 				209DED7922DA82A300B869AC /* HoverButton.swift in Sources */,
 				209DED7A22DA82A300B869AC /* HoverView.swift in Sources */,
 				209DED6622DA6D1B00B869AC /* NSObject+Create.swift in Sources */,
+				207F0EAA22DBBAD70009ED1E /* Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

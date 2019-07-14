@@ -10,10 +10,10 @@ import UIKit
 
 struct Calculator {
     
-    static func nearestPoint(from point: CGPoint, to points: [CGPoint]) -> CGPoint {
+    static func nearestPoint(from point: CGPoint, to points: [Anchor]) -> Anchor {
         var minimumDistance = CGFloat.greatestFiniteMagnitude
-        return points.reduce(into: .zero) {
-            let distance = point.distance(to: $1)
+        return points.reduce(into: points[0]) {
+            let distance = point.distance(to: $1.center)
             if distance < minimumDistance {
                 minimumDistance = distance
                 $0 = $1
