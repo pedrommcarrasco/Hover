@@ -16,6 +16,9 @@ public enum HoverPosition {
     case bottomRight
 }
 
+// MARK: - CaseIterable
+extension HoverPosition: CaseIterable {}
+
 // MARK: - Configuration
 extension HoverPosition {
 

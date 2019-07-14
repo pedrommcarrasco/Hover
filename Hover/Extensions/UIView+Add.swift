@@ -18,6 +18,13 @@ extension UIView {
         }
     }
     
+    func add(views: [UIView]) {
+        views.forEach {
+            self.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    
     func add(layoutGuides: [UILayoutGuide]) {
         layoutGuides.forEach {
             self.addLayoutGuide($0)

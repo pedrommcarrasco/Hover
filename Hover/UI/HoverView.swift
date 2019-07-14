@@ -8,21 +8,28 @@
 
 import UIKit
 
-
-
 // MARK: - HoverView
 public class HoverView: UIView {
     
     // MARK: Outlets
-    private let dimView = UIView()
-    private let button: HoverButton
     private let anchorGuides: [UILayoutGuide]
+    private let button: HoverButton
+    private let itemViews: [HoverItemView]
+    private let itemsStackView: UIStackView = .create {
+        $0.spacing = 8
+    }
+    private let dimView: UIView = .create {
+        $0.alpha = 0.0
+        $0.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    }
     
     // MARK: Private Properties
-    private var isOpen: Bool = false
     private let buttonSize: CGFloat
     private let anchors: [HoverPosition]
+    private let items: [HoverItem]
     private let spacing: CGFloat
+    private var isOpen = false
+    private var currentAnchor: HoverPosition = .bottomRight
     
     private let panRecognizer = UIPanGestureRecognizer()
     private var offset = CGPoint.zero
@@ -31,10 +38,18 @@ public class HoverView: UIView {
     }
     
     // MARK: Lifecycle
-    public init(colors: [UIColor], image: UIImage?, buttonSize: CGFloat = 44.0, anchors: [HoverPosition] = .all, spacing: CGFloat = 12.0) {
-        self.button = HoverButton(with: colors, image: image)
+    public init(color: HoverColor,
+                image: UIImage?,
+                buttonSize: CGFloat = 44.0,
+                items: [HoverItem] = [],
+                anchors: [HoverPosition] = .all,
+                spacing: CGFloat = 12.0) {
+        
+        self.button = HoverButton(with: color, image: image)
+        self.itemViews = items.map(HoverItemView.init)
         self.buttonSize = buttonSize
         self.anchors = anchors
+        self.items = items
         self.spacing = spacing
         self.anchorGuides = anchors.map { _ in return UILayoutGuide() }
         super.init(frame: .zero)
@@ -47,7 +62,7 @@ public class HoverView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        button.center = anchorCenters.last ?? .zero
+        button.center = anchorCenters[HoverPosition.allCases.firstIndex(of: currentAnchor)!]
     }
 }
 
@@ -61,8 +76,9 @@ private extension HoverView {
     }
     
     func addSubviews() {
-        add(views: dimView, button)
         add(layoutGuides: anchorGuides)
+        add(views: dimView, button, itemsStackView)
+        itemsStackView.add(arrangedViews: itemViews, hidden: true)
     }
     
     func defineConstraints() {
@@ -81,6 +97,9 @@ private extension HoverView {
                 button.widthAnchor.constraint(equalToConstant: self.buttonSize),
                 button.heightAnchor.constraint(equalToConstant: self.buttonSize),
                 
+                itemsStackView.bottomAnchor.constraint(equalTo: anchorGuides.last!.topAnchor, constant: -16),
+                itemsStackView.trailingAnchor.constraint(equalTo: anchorGuides.last!.trailingAnchor),
+                
                 dimView.topAnchor.constraint(equalTo: topAnchor),
                 dimView.bottomAnchor.constraint(equalTo: bottomAnchor),
                 dimView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -93,8 +112,6 @@ private extension HoverView {
         button.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPan(from:))))
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
         
-        dimView.alpha = 0
-        dimView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         dimView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapInDim)))
     }
 }
@@ -124,9 +141,9 @@ private extension HoverView {
             button.center =  touchPoint - offset
         case .ended, .cancelled:
             let velocity = recognizer.velocity(in: self)
-            let projectedPosition = HoverPhysics.project(velocity: velocity, decelerationRate: .normal, into: button.center)
-            let nearestAnchorPosition = HoverPhysics.nearestPoint(from: projectedPosition, to: anchorCenters)
-            let relativeVelocity = HoverPhysics.relativeVelocity(for: velocity, from: button.center, to: nearestAnchorPosition)
+            let projectedPosition = Calculator.project(velocity: velocity, decelerationRate: .normal, into: button.center)
+            let nearestAnchorPosition = Calculator.nearestPoint(from: projectedPosition, to: anchorCenters)
+            let relativeVelocity = Calculator.relativeVelocity(for: velocity, from: button.center, to: nearestAnchorPosition)
             
             let timingParameters = UISpringTimingParameters(damping: 0.8, response: 0.5, initialVelocity: relativeVelocity)
             let animator = UIViewPropertyAnimator(duration: 0.15, timingParameters: timingParameters)
@@ -154,14 +171,22 @@ private extension HoverView {
     }
     
     func animateOpeningState() {
-        UIView.animate(withDuration: 0.3) {
+        UIViewPropertyAnimator(duration: 0.3, dampingRatio: 0.8) {
             self.dimView.alpha = 1.0
-        }
+            self.itemsStackView.arrangedSubviews.forEach {
+                $0.isHidden = false
+                $0.alpha = 1.0
+            }
+        }.startAnimation()
     }
     
     func animateClosingState() {
-        UIView.animate(withDuration: 0.3) {
+        UIViewPropertyAnimator(duration: 0.3, dampingRatio: 0.8) {
             self.dimView.alpha = 0.0
-        }
+            self.itemsStackView.arrangedSubviews.forEach {
+                $0.isHidden = true
+                $0.alpha = 0.0
+            }
+        }.startAnimation()
     }
 }

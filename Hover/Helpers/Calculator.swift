@@ -1,5 +1,5 @@
 //
-//  HoverCalculator.swift
+//  Calculator.swift
 //  Hover
 //
 //  Created by Pedro Carrasco on 12/07/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct HoverPhysics {
+struct Calculator {
     
     static func nearestPoint(from point: CGPoint, to points: [CGPoint]) -> CGPoint {
         var minimumDistance = CGFloat.greatestFiniteMagnitude
@@ -32,7 +32,7 @@ struct HoverPhysics {
     }
 }
 
-private extension HoverPhysics {
+private extension Calculator {
     
     static func project(velocity: CGFloat, decelerationRate: UIScrollView.DecelerationRate) -> CGFloat {
         return (velocity / 2500) * decelerationRate.rawValue / (1 - decelerationRate.rawValue)

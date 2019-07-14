@@ -18,18 +18,22 @@ class HoverButton: UIControl {
     }
     
     // MARK: Outlets
-    private lazy var gradientLayer = decorateWithGradient()
+    private var gradientLayer: CAGradientLayer?
     private let imageView: UIImageView = .create {
         $0.contentMode = .scaleAspectFit
     }
     private let hightlightView: UIView = .create {
-        $0.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        $0.backgroundColor = UIColor.white.withAlphaComponent(0.15)
         $0.isUserInteractionEnabled = false
         $0.clipsToBounds = true
         $0.alpha = 0.0
     }
     
     // MARK: Overriden Properties
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: bounds.width, height: bounds.height)
+    }
+    
     override var isHighlighted: Bool {
         didSet {
             let transform: CGAffineTransform = isHighlighted ? Constant.scaleDownTransform : .identity
@@ -42,11 +46,15 @@ class HoverButton: UIControl {
         }
     }
     
+    // MARK: Prviate Properties
+    private let color: HoverColor
+    private let image: UIImage?
+    
     // MARK: Lifecycle
-    init(with colors: [UIColor], image: UIImage?) {
+    init(with color: HoverColor, image: UIImage?) {
+        self.color = color
+        self.image = image
         super.init(frame: .zero)
-        imageView.image = image
-        gradientLayer.colors = colors.map{ $0.cgColor }
         configure()
     }
     
@@ -56,10 +64,11 @@ class HoverButton: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        invalidateIntrinsicContentSize()
         layer.decorateAsCircle()
         hightlightView.layer.decorateAsCircle()
-        gradientLayer.frame = bounds
-        gradientLayer.decorateAsCircle()
+        gradientLayer?.frame = bounds
+        gradientLayer?.decorateAsCircle()
         decorateWithShadow()
     }
 }
@@ -70,6 +79,7 @@ private extension HoverButton {
     func configure() {
         addSubviews()
         defineConstraints()
+        setupSubviews()
     }
     
     func addSubviews() {
@@ -90,5 +100,17 @@ private extension HoverButton {
                 hightlightView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ]
         )
+    }
+    
+    func setupSubviews() {
+        imageView.image = image
+        
+        switch color {
+        case .color(let color):
+            backgroundColor = color
+        case .gradient(let top, let bottom):
+            gradientLayer = decorateWithGradient()
+            gradientLayer?.colors = [bottom, top].map { $0.cgColor }
+        }
     }
 }

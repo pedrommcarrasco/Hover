@@ -3,9 +3,10 @@ import Hover
 
 class ViewController: UIViewController {
     
-    private let hoverView = HoverView(colors: [UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0), UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)],
+    private let hoverView = HoverView(color: .gradient(top: UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0), bottom: UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)),
                                       image: UIImage(named: "cocoa"),
-                                      buttonSize: 60)
+                                      buttonSize: 60,
+                                      items: [HoverItem(title: "Example", image: UIImage(named: "Add")!, onTap: {})])
     
     override func viewDidLoad() {
         super.viewDidLoad()
