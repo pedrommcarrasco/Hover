@@ -21,7 +21,6 @@ public class HoverView: UIView {
         static let animationDuration = 0.4
         static let anchorAnimationDuration = 0.15
         static let interItemSpacing: CGFloat = 12.0
-        static let dimColor = UIColor.black.withAlphaComponent(0.5)
     }
     
     // MARK: State
@@ -37,10 +36,10 @@ public class HoverView: UIView {
     private let itemsStackView: UIStackView = .create {
         $0.spacing = Constant.interItemSpacing
         $0.axis = .vertical
+        $0.isUserInteractionEnabled = false
     }
-    private let dimView: UIView = .create {
+    private let dimView: DimView = .create {
         $0.alpha = 0.0
-        $0.backgroundColor = Constant.dimColor
     }
     
     // MARK: Constraints
@@ -102,6 +101,18 @@ public class HoverView: UIView {
     }
 }
 
+public extension HoverView {
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitView = super.hitTest(point, with: event)
+        if hitView == self {
+            onTapInDim()
+            return nil
+        }
+        return hitView
+    }
+}
+
 // MARK: - Configuration
 private extension HoverView {
     
@@ -143,8 +154,6 @@ private extension HoverView {
     
     func setupSubviews() {
         adapt(to: currentAnchor)
-        
-        dimView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapInDim)))
         
         button.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPan(from:))))
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
@@ -217,6 +226,8 @@ private extension HoverView {
     }
     
     private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
+        itemsStackView.isUserInteractionEnabled = isOpening
+        
         UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
             self.dimView.alpha = isOpening ? 1.0 : 0.0
         }.startAnimation()

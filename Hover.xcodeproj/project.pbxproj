@@ -12,6 +12,7 @@
 		20427AB122D905E7007C5ED0 /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */; };
 		20427AB522D907CE007C5ED0 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */; };
 		20427AB722D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */; };
+		206168A022DE7F8D003A39C8 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061689F22DE7F8D003A39C8 /* DimView.swift */; };
 		207F0EAA22DBBAD70009ED1E /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EA922DBBAD70009ED1E /* Anchor.swift */; };
 		207F0EAC22DBBC370009ED1E /* HoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EAB22DBBC370009ED1E /* HoverConfiguration.swift */; };
 		207F0EAE22DBD3770009ED1E /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207F0EAD22DBD3770009ED1E /* Orientation.swift */; };
@@ -34,6 +35,7 @@
 		20427AB022D905E7007C5ED0 /* CGPoint+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
 		20427AB422D907CE007C5ED0 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
 		20427AB622D90CBC007C5ED0 /* UISpringTimingParameters+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Init.swift"; sourceTree = "<group>"; };
+		2061689F22DE7F8D003A39C8 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 		207F0EA922DBBAD70009ED1E /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		207F0EAB22DBBC370009ED1E /* HoverConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverConfiguration.swift; sourceTree = "<group>"; };
 		207F0EAD22DBD3770009ED1E /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				209DED7222DA82A300B869AC /* HoverButton.swift */,
 				209DED7322DA82A300B869AC /* HoverView.swift */,
 				209DED7E22DA82D300B869AC /* HoverItemView.swift */,
+				2061689F22DE7F8D003A39C8 /* DimView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				20427AB522D907CE007C5ED0 /* CGPoint+Distance.swift in Sources */,
 				20979A9722D9F80700160A89 /* CGRect+Center.swift in Sources */,
 				209DED6422DA63D100B869AC /* UIView+Add.swift in Sources */,
+				206168A022DE7F8D003A39C8 /* DimView.swift in Sources */,
 				200A2A5F22DB36010034E819 /* HoverColor.swift in Sources */,
 				209DED7822DA82A300B869AC /* Calculator.swift in Sources */,
 				207F0EAC22DBBC370009ED1E /* HoverConfiguration.swift in Sources */,
