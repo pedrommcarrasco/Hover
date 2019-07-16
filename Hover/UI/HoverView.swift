@@ -10,10 +10,24 @@ import UIKit
 
 // MARK: - HoverView
 public class HoverView: UIView {
+
+    // MARK: Constant
+    private enum Constant {
+        static let delayMultiplier = 0.05
+        static let translationBase: CGFloat = 50.0
+        static let translationMultiplier: CGFloat = 10.0
+        static let animationDamping: CGFloat = 0.8
+        static let animationResponse: CGFloat = 0.5
+        static let animationDuration = 0.4
+        static let anchorAnimationDuration = 0.15
+        static let interItemSpacing: CGFloat = 12.0
+        static let dimColor = UIColor.black.withAlphaComponent(0.5)
+    }
     
-    enum State {
+    // MARK: State
+    private enum State {
         case none
-        case animating
+        case disappearing
         case pending
     }
     
@@ -21,24 +35,23 @@ public class HoverView: UIView {
     private let button: HoverButton
     private let itemViews: [HoverItemView]
     private let itemsStackView: UIStackView = .create {
-        $0.spacing = 12
+        $0.spacing = Constant.interItemSpacing
         $0.axis = .vertical
     }
     private let dimView: UIView = .create {
         $0.alpha = 0.0
-        $0.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        $0.backgroundColor = Constant.dimColor
     }
     
     // MARK: Constraints
     private var stackViewXConstraint = NSLayoutConstraint()
     private var stackViewYConstraint = NSLayoutConstraint()
     
-    
     // MARK: Private Properties
     private let anchors: [Anchor]
     private var currentAnchor: Anchor {
         didSet {
-            if state == .animating {
+            if state == .disappearing {
                 state = .pending
             } else {
                 adapt(to: currentAnchor)
@@ -48,16 +61,15 @@ public class HoverView: UIView {
     
     private let configuration: HoverConfiguration
     private let items: [HoverItem]
-    private var isOpen = false
     private var state: State = .none
+    private var isOpen = false
     
     private let panRecognizer = UIPanGestureRecognizer()
     private var offset = CGPoint.zero
     
     
     // MARK: Lifecycle
-    public init(with configuration: HoverConfiguration,
-                items: [HoverItem] = []) {
+    public init(with configuration: HoverConfiguration = .init(), items: [HoverItem] = .init()) {
         
         guard !configuration.allowedPositions.isEmpty else {
             fatalError("`allowedPositions` can't be empty")
@@ -72,7 +84,9 @@ public class HoverView: UIView {
         self.currentAnchor = currentAnchor
         self.configuration = configuration
         self.button = HoverButton(with: configuration.color, image: configuration.icon)
-        self.itemViews = items.map { HoverItemView(with: $0, orientation: currentAnchor.position.orientation, size: configuration.itemSize) }
+        self.itemViews = items.reversed().map {
+            HoverItemView(with: $0, orientation: currentAnchor.position.xOrientation, size: configuration.itemSize)
+        }
         self.items = items
         super.init(frame: .zero)
         configure()
@@ -168,8 +182,10 @@ private extension HoverView {
             currentAnchor = Calculator.nearestPoint(from: projectedPosition, to: anchors)
             let relativeVelocity = Calculator.relativeVelocity(for: velocity, from: button.center, to: currentAnchor.center)
             
-            let timingParameters = UISpringTimingParameters(damping: 0.8, response: 0.5, initialVelocity: relativeVelocity)
-            let animator = UIViewPropertyAnimator(duration: 0.15, timingParameters: timingParameters)
+            let timingParameters = UISpringTimingParameters(damping: Constant.animationDamping,
+                                                            response: Constant.animationResponse,
+                                                            initialVelocity: relativeVelocity)
+            let animator = UIViewPropertyAnimator(duration: Constant.anchorAnimationDuration, timingParameters: timingParameters)
             animator.addAnimations {  self.button.center = self.currentAnchor.center }
             animator.startAnimation()
         default:
@@ -187,49 +203,51 @@ private extension HoverView {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
         
         if isOpen {
-            animateOpeningState()
+            animate(isOpening: true, anchor: currentAnchor)
         } else {
-            animateClosingState()
+            state = .disappearing
+            animate(isOpening: false, anchor: currentAnchor) {
+                if self.state == .pending {
+                    self.adapt(to: self.currentAnchor)
+                }
+                
+                self.state = .none
+            }
         }
     }
     
-    func animateOpeningState() {
-        UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut) {
-            self.dimView.alpha = 1.0
+    private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
+        UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
+            self.dimView.alpha = isOpening ? 1.0 : 0.0
         }.startAnimation()
         
-        UIViewPropertyAnimator(duration: 0.4, dampingRatio: 0.8) {
-            self.itemsStackView.arrangedSubviews.forEach {
-                $0.isHidden = false
-                $0.alpha = 1.0
-            }
-        }.startAnimation()
-    }
-    
-    func animateClosingState() {
-        self.state = .animating
-        
-        UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut) {
-            self.dimView.alpha = 0.0
-        }.startAnimation()
-        
-        let animator = UIViewPropertyAnimator(duration: 0.4, dampingRatio: 0.8) {
-            self.dimView.alpha = 0.0
-            self.itemsStackView.arrangedSubviews.forEach {
-                $0.isHidden = true
-                $0.alpha = 0.0
-            }
-        }
-        
-        animator.addCompletion { _ in
-            if self.state == .pending {
-                self.adapt(to: self.currentAnchor)
+        anchor.position.yOrientation.reverseArrayIfNeeded(itemsStackView.arrangedSubviews).enumerated().forEach { (index, view) in
+            let translationTransform = self.translation(for: index, anchor: anchor)
+            view.transform = isOpening ? translationTransform : .identity
+            
+            let animator = UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
+                view.transform = isOpening ? .identity : translationTransform
+                view.alpha = isOpening ? 1.0 : 0.0
             }
             
-            self.state = .none
+            animator.addCompletion { _ in
+                if index == self.itemsStackView.arrangedSubviews.count - 1 {
+                    completion?()
+                }
+            }
+            
+            animator.startAnimation(afterDelay: self.delay(for: index))
         }
-        
-        animator.startAnimation()
+    }
+    
+    func delay(for index: Int) -> TimeInterval {
+        return Constant.delayMultiplier * Double(index)
+    }
+    
+    func translation(for index: Int, anchor: Anchor) -> CGAffineTransform {
+        let extra = Constant.translationMultiplier * CGFloat(index)
+        return CGAffineTransform(translationX: (Constant.translationBase + extra) * anchor.position.xOrientation.translationModifier,
+                                 y: .zero)
     }
 }
 
@@ -237,26 +255,27 @@ private extension HoverView {
 private extension HoverView {
     
     func adapt(to anchor: Anchor) {
-        setConstraints(for: currentAnchor)
-        itemViews.forEach { $0.orientation = currentAnchor.position.orientation }
-    }
-    
-    func setConstraints(for anchor: Anchor) {
         NSLayoutConstraint.deactivate([stackViewXConstraint, stackViewYConstraint])
         switch anchor.position {
         case .topLeft:
+            itemsStackView.add(arrangedViews: itemViews.reversed(), hidden: true)
             stackViewXConstraint = itemsStackView.leadingAnchor.constraint(equalTo: anchor.guide.leadingAnchor, constant: self.configuration.itemMargin)
             stackViewYConstraint = itemsStackView.topAnchor.constraint(equalTo: currentAnchor.guide.bottomAnchor, constant: self.configuration.spacing)
         case .topRight:
+            itemsStackView.add(arrangedViews: itemViews.reversed(), hidden: true)
             stackViewXConstraint = itemsStackView.trailingAnchor.constraint(equalTo: anchor.guide.trailingAnchor, constant: -self.configuration.itemMargin)
             stackViewYConstraint = itemsStackView.topAnchor.constraint(equalTo: currentAnchor.guide.bottomAnchor, constant: self.configuration.spacing)
         case .bottomLeft:
+            itemsStackView.add(arrangedViews: itemViews, hidden: true)
             stackViewXConstraint = itemsStackView.leadingAnchor.constraint(equalTo: anchor.guide.leadingAnchor, constant: self.configuration.itemMargin)
             stackViewYConstraint = itemsStackView.bottomAnchor.constraint(equalTo: currentAnchor.guide.topAnchor, constant: -self.configuration.spacing)
         case .bottomRight:
+            itemsStackView.add(arrangedViews: itemViews, hidden: true)
             stackViewXConstraint = itemsStackView.trailingAnchor.constraint(equalTo: anchor.guide.trailingAnchor, constant: -self.configuration.itemMargin)
             stackViewYConstraint = itemsStackView.bottomAnchor.constraint(equalTo: currentAnchor.guide.topAnchor, constant: -self.configuration.spacing)
         }
         NSLayoutConstraint.activate([stackViewXConstraint, stackViewYConstraint])
+        
+        itemViews.forEach { $0.orientation = currentAnchor.position.xOrientation }
     }
 }

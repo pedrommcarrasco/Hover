@@ -32,8 +32,10 @@ class ViewController: UIViewController {
                                                    initialPosition: .bottomRight)
     
     private lazy var hoverView = HoverView(with: configuration,
-                                           items: [HoverItem(title: "Example", image: .add, onTap: {}),
-                                                   HoverItem(title: "Test", image: .add, onTap: {})])
+                                           items: [HoverItem(title: "Item 1", image: .add, onTap: {}),
+                                                   HoverItem(title: "Item 2", image: .add, onTap: {}),
+                                                   HoverItem(title: "Item 3", image: .add, onTap: {}),
+                                                   HoverItem(title: "Item 4", image: .add, onTap: {})])
     
     
     override func viewDidLoad() {

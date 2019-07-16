@@ -15,15 +15,19 @@ class HoverButton: UIControl {
     private enum Constant {
         static let minimumHeight: CGFloat = 44.0
         static let scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        static let animationDuration = 0.5
+        static let animationDamping: CGFloat = 0.4
+        static let imageMultiplier: CGFloat = 0.4
     }
     
     // MARK: Outlets
     private var gradientLayer: CAGradientLayer?
     private let imageView: UIImageView = .create {
         $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = false
     }
     private let hightlightView: UIView = .create {
-        $0.backgroundColor = UIColor.white.withAlphaComponent(0.15)
+        $0.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         $0.isUserInteractionEnabled = false
         $0.clipsToBounds = true
         $0.alpha = 0.0
@@ -39,7 +43,7 @@ class HoverButton: UIControl {
             let transform: CGAffineTransform = isHighlighted ? Constant.scaleDownTransform : .identity
             let alpha: CGFloat = isHighlighted ? 1.0 : 0.0
             
-            UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.4) {
+            UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
                 self.transform = transform
                 self.hightlightView.alpha = alpha
             }.startAnimation()
@@ -89,7 +93,7 @@ private extension HoverButton {
     func defineConstraints() {
         NSLayoutConstraint.activate(
             [
-                imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4),
+                imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constant.imageMultiplier),
                 imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
                 imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: centerYAnchor),

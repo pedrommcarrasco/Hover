@@ -22,7 +22,7 @@ extension UIStackView {
         arrangedViews.forEach {
             self.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.isHidden = hidden
+            $0.alpha = hidden ? 0.0 : 1.0
         }
     }
 }

@@ -11,6 +11,11 @@ import UIKit
 // MARK: - HoverItemView
 class HoverItemView: UIStackView {
     
+    // MARK: Constant
+    private enum Constant {
+        static let interItemSpacing: CGFloat = 8.0
+    }
+    
     // MARK: Outlets
     private let button: HoverButton
     private let label: UILabel = .create {
@@ -19,7 +24,7 @@ class HoverItemView: UIStackView {
     
     // MARK: Properties
     var onTap: (() -> ())?
-    var orientation: Orientation {
+    var orientation: XOrientation {
         didSet { adapt(to: orientation) }
     }
     
@@ -28,7 +33,7 @@ class HoverItemView: UIStackView {
     private let size: CGFloat
     
     // MARK: Lifecycle
-    init(with item: HoverItem, orientation: Orientation, size: CGFloat) {
+    init(with item: HoverItem, orientation: XOrientation, size: CGFloat) {
         self.item = item
         self.orientation = orientation
         self.size = size
@@ -47,8 +52,7 @@ class HoverItemView: UIStackView {
 private extension HoverItemView {
     
     func configure() {
-        axis = .horizontal
-        spacing = 8
+        spacing = Constant.interItemSpacing
         
         addSubviews()
         setupSubviews()
@@ -83,7 +87,7 @@ private extension HoverItemView {
 // MARK: - Condional Constraints
 private extension HoverItemView {
     
-    func adapt(to orientation: Orientation) {
+    func adapt(to orientation: XOrientation) {
         switch orientation {
         case .leftToRight:
             label.textAlignment = .left
