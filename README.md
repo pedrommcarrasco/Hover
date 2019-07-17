@@ -1,62 +1,94 @@
+![](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/Design/logo.png?raw=true)
+
 <p align="center">
-    <img src="logo.gif?raw=true alt="SliceControl" width="100%"/>
+<img src="https://github.com/pedrommcarrasco/Hover/blob/1.0.0/Design/demo.gif?raw=true" alt="Presentation" width="100%"/>
 </p>
-                      
-> **Slice** *(/slɑɪs/)*, *noun*
+
+> **Hover** *(/ˈhɒv.ər/)*, *verb*
 >
-> "A slice is any small part that has been separated from something larger"
+> "to stay in one place in the air"
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SliceControl.svg)](https://cocoapods.org/pods/SliceControl)
-[![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/SliceControl/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Hover.svg)](https://cocoapods.org/pods/Hover)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE)
 
-# Usage Example ⌨️
+# What's Hover?
 
-After installing **SliceControl**, you should start by importing the framework:
+Hover is a draggable **floating action button** (FAB) inspired by Apple's session [**Designing Fluid Interfaces**](https://developer.apple.com/wwdc18/803). Hover will always stick to the nearest corner to avoid blocking content and allows the user to send it to any other corner with a single swipe.
 
-```swift
-import SliceControl
-```
+# Installation 📦 
 
-Once imported, you can start using **SliceControl** like follows:
-
-```swift
-sliceControl = SliceControl(with: ["All", "Liked", "Favourited"],
-                            primaryColor: .darkGray,
-                            secondaryColor: .white,
-                            padding: 12)
-
-// Implement SliceControlDelegate to intercept actions
-sliceControl.delegate = self
-
-view.addSubview(sliceControl)
-// ... Constrain it
-```
-You can also set its `UIFont` and starting option.
-
-## RxSwift
-Would you like to subscribe to SliceControl's events using RxSwift? **[RxSliceControl](https://github.com/pedrommcarrasco/RxSliceControl)** is here to save you!
-
-# Instalation 📦
-
-**SliceControl** is available through [CocoaPods](https://cocoapods.org/pods/SliceControl). In order to install, add the following line to your Podfile:
+## CocoaPods
+Add the following line to your `podfile`:
 
 ```swift
-pod 'SliceControl'
+pod 'Hover'
 ```
-And run the following command in terminal:
+And then run the following command in terminal:
 
 ```swift
 pod install
 ```
 
-# Sample Project  📲
+## Carthage
+Add the following line to your `cartfile`:
 
-There's a sample project in this repository called [Example](https://github.com/pedrommcarrasco/SliceControl/tree/master/Example).
+```swift
+github "pedrommcarrasco/Hover"
+```
 
-# Contributing  🙌 
+And then run the following command in terminal:
 
-Feel free to contribute to this project by providing [ideas](https://github.com/pedrommcarrasco/SliceControl/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or opening [pull requests](https://github.com/pedrommcarrasco/SliceControl/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
+```swift
+carthage update
+```
+
+# Usage Example ⌨️
+After installing **Hover**, you should start by importing the framework:
+
+```swift
+import Hover
+```
+
+Once imported, you can start using **Hover** like follows:
+
+```swift
+// Create Hover's Configuration
+// All parameters have defaults, see `HoverConfiguration.swift` to see all the possible parameters
+let configuration = HoverConfiguration(icon: UIImage(named: "add"), color: .gradient(top: .blue, bottom: .cyan))
+
+// Create the items to display
+let items = [
+    HoverItem(title: "Drop it Anywhere", image: UIImage(named: "anywhere")) { print("Tapped 'Drop it anywhere'") },
+    HoverItem(title: "Gesture Driven", image: UIImage(named: "gesture")) { print("Tapped 'Gesture driven'") },
+    HoverItem(title: "Give it a Star", image: UIImage(named: "star")) { print("Tapped 'Give it a star'") }
+]
+
+// Create an HoverView with the previous configuration & items
+let hoverView = HoverView(with: configuration, items: items)
+
+// Add to the top of the view hierarchy
+view.addSubview(hoverView)
+hoverView.translatesAutoresizingMaskIntoConstraints = false
+
+
+NSLayoutConstraint.activate(
+    [
+        hoverView.topAnchor.constraint(equalTo: view.topAnchor),
+        hoverView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        hoverView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        hoverView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ]
+)
+```
+
+#  Sample Project 📲
+There's a sample project in this repository with some samples of Hover called [Example](https://github.com/pedrommcarrasco/Hover/tree/1.0.0/Example).
+
+# Contributing 🙌 
+Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Hover/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Hover/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
+
+Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additioal customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
 
 # License ⛔
-
-SliceControl's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/SliceControl/blob/master/LICENSE) file for more information.
+Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE) file for more information.
