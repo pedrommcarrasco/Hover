@@ -8,8 +8,17 @@
 
 import UIKit
 
+// MARK: - Calculator
 struct Calculator {
     
+    // MARK: Constant
+    private enum Constant {
+        static let delayMultiplier = 0.05
+        static let translationBase: CGFloat = 50.0
+        static let translationMultiplier: CGFloat = 10.0
+    }
+    
+    // MARK: Functions
     static func nearestPoint(from point: CGPoint, to points: [Anchor]) -> Anchor {
         var minimumDistance = CGFloat.greatestFiniteMagnitude
         return points.reduce(into: points[0]) {
@@ -30,8 +39,19 @@ struct Calculator {
         return CGPoint(x: point.x + project(velocity: velocity.x, decelerationRate: .normal),
                        y: point.y + project(velocity: velocity.y, decelerationRate: .normal))
     }
+    
+    static func delay(for index: Int) -> TimeInterval {
+        return Constant.delayMultiplier * Double(index)
+    }
+    
+    static func translation(for index: Int, anchor: Anchor) -> CGAffineTransform {
+        let extra = Constant.translationMultiplier * CGFloat(index)
+        return CGAffineTransform(translationX: (Constant.translationBase + extra) * anchor.position.xOrientation.translationModifier,
+                                 y: .zero)
+    }
 }
 
+// MARK: - Private Functions
 private extension Calculator {
     
     static func project(velocity: CGFloat, decelerationRate: UIScrollView.DecelerationRate) -> CGFloat {

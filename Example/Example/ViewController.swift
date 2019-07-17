@@ -1,4 +1,5 @@
 import UIKit
+import WebKit
 import Hover
 
 extension UIImage {
@@ -23,17 +24,12 @@ extension UIColor {
 }
 
 
+
 class ViewController: UIViewController {
     
+    @IBOutlet weak var webview: WKWebView!
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    let datasource = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]
-    
-    private let configuration = HoverConfiguration(icon: .cocoa,
-                                                   color: .gradient(top: .lightBlue, bottom: .darkBlue),
-                                                   size: 60.0,
-                                                   initialPosition: .bottomRight)
+    private let configuration = HoverConfiguration(icon: .cocoa, color: .gradient(top: .lightBlue, bottom: .darkBlue))
     
     private lazy var hoverView = HoverView(with: configuration,
                                            items: [HoverItem(title: "Item 1", image: .add, onTap: {}),
@@ -43,9 +39,11 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        guard let url = URL(string: "https://github.com/pedrommcarrasco") else { return }
+        
+        webview.load(URLRequest(url: url))
         
         view.addSubview(hoverView)
         hoverView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,19 +56,5 @@ class ViewController: UIViewController {
             ]
         )
         
-    }
-}
-
-extension ViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datasource.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = datasource[indexPath.row]
-        cell.textLabel?.numberOfLines = 0
-        return cell
     }
 }

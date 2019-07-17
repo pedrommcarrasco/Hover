@@ -22,32 +22,42 @@ public struct HoverConfiguration {
     public var icon: UIImage?
     public var size: CGFloat
     public var spacing: CGFloat
+    public var font: UIFont?
     public var initialPosition: HoverPosition
     public var allowedPositions: [HoverPosition]
     
-    var itemSize: CGFloat {
-        return size * Constant.itemSizeRatio
+    var itemConfiguration: HoverItemConfiguration {
+        return HoverItemConfiguration(size: size * Constant.itemSizeRatio,
+                                      margin: size * ((1 - Constant.itemSizeRatio) / 2),
+                                      font: font,
+                                      initialXOrientation: initialPosition.xOrientation)
     }
-    
-    var itemMargin: CGFloat {
-        return size * ((1 - Constant.itemSizeRatio) / 2)
-    }
-    
     
     // MARK: Init
     public init(icon: UIImage? = nil,
-                color: HoverColor = .color(.white),
+                color: HoverColor = .color(.blue),
                 size: CGFloat = 60.0,
                 spacing: CGFloat = 12.0,
                 initialPosition: HoverPosition = .bottomRight,
-                allowedPositions: [HoverPosition] = .all) {
+                allowedPositions: [HoverPosition] = .all,
+                font: UIFont? = nil) {
         
         self.icon = icon
         self.color = color
         self.size = size
         self.spacing = spacing
+        self.font = font
         self.initialPosition = initialPosition
         self.allowedPositions = allowedPositions
     }
+}
+
+// MARK: - HoverItemConfiguration
+struct HoverItemConfiguration {
+    
+    let size: CGFloat
+    let margin: CGFloat
+    let font: UIFont?
+    let initialXOrientation: Orientation.X
 }
 

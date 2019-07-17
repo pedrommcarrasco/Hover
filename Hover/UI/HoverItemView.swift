@@ -24,7 +24,7 @@ class HoverItemView: UIStackView {
     
     // MARK: Properties
     var onTap: (() -> ())?
-    var orientation: XOrientation {
+    var orientation: Orientation.X {
         didSet { adapt(to: orientation) }
     }
     
@@ -33,11 +33,16 @@ class HoverItemView: UIStackView {
     private let size: CGFloat
     
     // MARK: Lifecycle
-    init(with item: HoverItem, orientation: XOrientation, size: CGFloat) {
+    init(with item: HoverItem, configuration: HoverItemConfiguration) {
         self.item = item
-        self.orientation = orientation
-        self.size = size
+        self.orientation = configuration.initialXOrientation
+        self.size = configuration.size
         self.button = HoverButton(with: .color(.white), image: item.image)
+        
+        if let font = configuration.font {
+            self.label.font = font
+        }
+        
         self.label.text = item.title
         super.init(frame: .zero)
         configure()
@@ -87,7 +92,7 @@ private extension HoverItemView {
 // MARK: - Condional Constraints
 private extension HoverItemView {
     
-    func adapt(to orientation: XOrientation) {
+    func adapt(to orientation: Orientation.X) {
         switch orientation {
         case .leftToRight:
             label.textAlignment = .left

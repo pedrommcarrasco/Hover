@@ -19,8 +19,7 @@ extension UIView {
     }
     
     // MARK: Functions
-    func decorateWithGradient() -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
+    func makeGradientLayer(_ gradientLayer: CAGradientLayer = .init()) -> CAGradientLayer {
         gradientLayer.startPoint = GradientConstant.startPoint
         gradientLayer.endPoint = GradientConstant.endPoint
         gradientLayer.locations = GradientConstant.locations
@@ -40,7 +39,7 @@ extension UIView {
     }
     
     // MARK: Functions
-    func decorateWithShadow() {
+    func addShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 5)
         layer.shadowOpacity = ShadowConstant.opacity

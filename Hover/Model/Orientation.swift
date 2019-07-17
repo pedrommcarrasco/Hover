@@ -8,32 +8,36 @@
 
 import UIKit
 
-// MARK: - XOrientation
-enum XOrientation {
-    case leftToRight
-    case rightToLeft
+// MARK: - Orientation
+struct Orientation {
     
-    var translationModifier: CGFloat {
-        switch self {
-        case .leftToRight:
-            return -1.0
-        case .rightToLeft:
-            return 1.0
+    // MARK: X
+    enum X {
+        case leftToRight
+        case rightToLeft
+        
+        var translationModifier: CGFloat {
+            switch self {
+            case .leftToRight:
+                return -1.0
+            case .rightToLeft:
+                return 1.0
+            }
         }
     }
-}
-
-// MARK: - YOrientation
-enum YOrientation {
-    case topToBottom
-    case bottomToTop
     
-    func reverseArrayIfNeeded<T>(_ array: [T]) -> [T] {
-        switch self {
-        case .topToBottom:
-            return array
-        case .bottomToTop:
-            return array.reversed()
+    // MARK: Y
+    enum Y {
+        case topToBottom
+        case bottomToTop
+        
+        func reverseArrayIfNeeded<T>(_ array: [T]) -> [T] {
+            switch self {
+            case .topToBottom:
+                return array
+            case .bottomToTop:
+                return array.reversed()
+            }
         }
     }
 }

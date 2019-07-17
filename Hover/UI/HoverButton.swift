@@ -73,7 +73,7 @@ class HoverButton: UIControl {
         hightlightView.layer.decorateAsCircle()
         gradientLayer?.frame = bounds
         gradientLayer?.decorateAsCircle()
-        decorateWithShadow()
+        addShadow()
     }
 }
 
@@ -113,7 +113,7 @@ private extension HoverButton {
         case .color(let color):
             backgroundColor = color
         case .gradient(let top, let bottom):
-            gradientLayer = decorateWithGradient()
+            gradientLayer = makeGradientLayer()
             gradientLayer?.colors = [bottom, top].map { $0.cgColor }
         }
     }

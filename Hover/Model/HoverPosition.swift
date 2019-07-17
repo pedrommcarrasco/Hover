@@ -19,7 +19,7 @@ public enum HoverPosition {
 // MARK: - Properties
 extension HoverPosition {
     
-    var xOrientation: XOrientation {
+    var xOrientation: Orientation.X {
         switch self {
         case .topLeft, .bottomLeft:
             return .leftToRight
@@ -28,7 +28,7 @@ extension HoverPosition {
         }
     }
     
-    var yOrientation: YOrientation {
+    var yOrientation: Orientation.Y {
         switch self {
         case .bottomLeft, .bottomRight:
             return .bottomToTop
