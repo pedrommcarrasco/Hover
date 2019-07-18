@@ -1,0 +1,6 @@
+module Hover {
+  umbrella header "Hover-umbrella.h"
+
+  export *
+  module * { export * }
+}

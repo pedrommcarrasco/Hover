@@ -1,0 +1,16 @@
+PODS:
+  - Hover (1.0.0)
+
+DEPENDENCIES:
+  - Hover (from `..`)
+
+EXTERNAL SOURCES:
+  Hover:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  Hover: 2daa5a328ce02230fdf620fe9e2cc62954a4e068
+
+PODFILE CHECKSUM: 4464a752690793fe72e3febd146ffc7ffb897004
+
+COCOAPODS: 1.7.3
