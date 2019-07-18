@@ -70,9 +70,9 @@ extension HoverPosition {
 }
 
 // MARK: - Sugar
-public extension Array where Element == HoverPosition {
+public extension Set where Element == HoverPosition {
 
-    static let all: [HoverPosition] = [.topLeft, .topRight, .bottomLeft, .bottomRight]
+    static let all: Set<HoverPosition> = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 }
 
 // MARK: - CaseIterable

@@ -1,7 +1,7 @@
-![](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/Design/logo.png?raw=true)
+![](https://github.com/pedrommcarrasco/Hover/blob/master/Design/logo.png?raw=true)
 
 <p align="center">
-<img src="https://github.com/pedrommcarrasco/Hover/blob/1.0.0/Design/demo.gif?raw=true" alt="Presentation" width="100%"/>
+<img src="https://github.com/pedrommcarrasco/Hover/blob/master/Design/demo.gif?raw=true" alt="Presentation" width="100%"/>
 </p>
 
 # 🎈 What's Hover?
@@ -14,7 +14,7 @@ Hover is a draggable **floating action button** (FAB) inspired by Apple's sessio
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/Hover.svg)](https://cocoapods.org/pods/Hover)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE)
+[![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Hover/blob/master/LICENSE)
 
 # 📦 Installation
 
@@ -53,8 +53,7 @@ import Hover
 Once imported, you can start using **Hover** like follows:
 
 ```swift
-// Create Hover's Configuration
-// All parameters have defaults, see `HoverConfiguration.swift` to see all the possible parameters
+// Create Hover's Configuration (all parameters have defaults)
 let configuration = HoverConfiguration(icon: UIImage(named: "add"), color: .gradient(top: .blue, bottom: .cyan))
 
 // Create the items to display
@@ -83,8 +82,10 @@ NSLayoutConstraint.activate(
 )
 ```
 
+For more details about all the parameters that you can configure, take a look into [`HoverConfiguration.swift`](https://github.com/pedrommcarrasco/Hover/blob/master/Hover/Model/HoverConfiguration.swift).
+
 # 📲 Sample Project
-There's a sample project in this repository with some samples of Hover called [Example](https://github.com/pedrommcarrasco/Hover/tree/1.0.0/Example).
+There's a sample project in this repository with some samples of Hover called [Example](https://github.com/pedrommcarrasco/Hover/tree/master/Example).
 
 # 🙌 Contributing
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Hover/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Hover/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
@@ -92,4 +93,4 @@ Feel free to contribute to this project by [reporting bugs](https://github.com/p
 Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additioal customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
 
 # ⛔ License
-Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE) file for more information.
+Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/master/LICENSE) file for more information.

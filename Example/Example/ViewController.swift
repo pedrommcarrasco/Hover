@@ -46,7 +46,6 @@ class ViewController: UIViewController {
                                               HoverItem(title: "Give it a Star", image: .star) { os_log("Tapped 'Give it a star'") }])
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         guard let url = URL(string: "https://github.com/pedrommcarrasco") else { return }
         

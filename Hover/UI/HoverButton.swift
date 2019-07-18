@@ -17,7 +17,7 @@ class HoverButton: UIControl {
         static let scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         static let animationDuration = 0.5
         static let animationDamping: CGFloat = 0.4
-        static let imageMultiplier: CGFloat = 0.4
+        static let highlightColor = UIColor.white.withAlphaComponent(0.2)
     }
     
     // MARK: Outlets
@@ -27,7 +27,7 @@ class HoverButton: UIControl {
         $0.isUserInteractionEnabled = false
     }
     private let hightlightView: UIView = .create {
-        $0.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        $0.backgroundColor = Constant.highlightColor
         $0.isUserInteractionEnabled = false
         $0.clipsToBounds = true
         $0.alpha = 0.0
@@ -50,16 +50,10 @@ class HoverButton: UIControl {
         }
     }
     
-    // MARK: Prviate Properties
-    private let color: HoverColor
-    private let image: UIImage?
-    
     // MARK: Lifecycle
-    init(with color: HoverColor, image: UIImage?) {
-        self.color = color
-        self.image = image
+    init(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
         super.init(frame: .zero)
-        configure()
+        configure(with: color, image: image, imageSizeRatio: imageSizeRatio)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,20 +74,20 @@ class HoverButton: UIControl {
 // MARK: - Configuration
 private extension HoverButton {
     
-    func configure() {
+    func configure(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
         addSubviews()
-        defineConstraints()
-        setupSubviews()
+        defineConstraints(with: imageSizeRatio)
+        setupSubviews(with: color, image: image)
     }
     
     func addSubviews() {
         add(views: imageView, hightlightView)
     }
     
-    func defineConstraints() {
+    func defineConstraints(with imageSizeRatio: CGFloat) {
         NSLayoutConstraint.activate(
             [
-                imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constant.imageMultiplier),
+                imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: imageSizeRatio),
                 imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
                 imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -106,7 +100,7 @@ private extension HoverButton {
         )
     }
     
-    func setupSubviews() {
+    func setupSubviews(with color: HoverColor, image: UIImage?) {
         imageView.image = image
         
         switch color {

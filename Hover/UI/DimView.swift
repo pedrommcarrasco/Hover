@@ -24,6 +24,5 @@ private extension DimView {
     
     func configure() {
         isUserInteractionEnabled = false
-        backgroundColor = UIColor.black.withAlphaComponent(0.75)
     }
 }

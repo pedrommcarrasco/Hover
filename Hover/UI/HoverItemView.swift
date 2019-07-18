@@ -30,14 +30,12 @@ class HoverItemView: UIStackView {
     
     // MARK: Private Properties
     private let item: HoverItem
-    private let size: CGFloat
     
     // MARK: Lifecycle
     init(with item: HoverItem, configuration: HoverItemConfiguration) {
         self.item = item
         self.orientation = configuration.initialXOrientation
-        self.size = configuration.size
-        self.button = HoverButton(with: .color(.white), image: item.image)
+        self.button = HoverButton(with: .color(.white), image: item.image, imageSizeRatio: configuration.imageSizeRatio)
         
         if let font = configuration.font {
             self.label.font = font
@@ -45,7 +43,7 @@ class HoverItemView: UIStackView {
         
         self.label.text = item.title
         super.init(frame: .zero)
-        configure()
+        configure(with: configuration)
     }
     
     required init(coder: NSCoder) {
@@ -56,16 +54,19 @@ class HoverItemView: UIStackView {
 // MARK: - Configuration
 private extension HoverItemView {
     
-    func configure() {
+    func configure(with configuration: HoverItemConfiguration) {
         spacing = Constant.interItemSpacing
         
         addSubviews()
+        defineConstraints(with: configuration.size)
         setupSubviews()
     }
     
     func addSubviews() {
         adapt(to: orientation)
-        
+    }
+    
+    func defineConstraints(with size: CGFloat) {
         NSLayoutConstraint.activate(
             [
                 button.heightAnchor.constraint(equalToConstant: size),

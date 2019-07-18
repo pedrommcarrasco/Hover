@@ -76,7 +76,7 @@ public class HoverView: UIView {
         
         self.currentAnchor = currentAnchor
         self.configuration = configuration
-        self.button = HoverButton(with: configuration.color, image: configuration.icon)
+        self.button = HoverButton(with: configuration.color, image: configuration.image, imageSizeRatio: configuration.imageSizeRatio)
         self.itemViews = items.reversed().map { HoverItemView(with: $0, configuration: configuration.itemConfiguration) }
         self.items = items
         super.init(frame: .zero)
@@ -142,10 +142,12 @@ private extension HoverView {
                 dimView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ]
         )
+        
+        adapt(to: currentAnchor)
     }
     
     func setupSubviews() {
-        adapt(to: currentAnchor)
+        dimView.backgroundColor = configuration.dimColor
         
         button.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPan(from:))))
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
