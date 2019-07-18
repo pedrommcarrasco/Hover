@@ -90,7 +90,7 @@ There's a sample project in this repository with some samples of Hover called [E
 # 🙌 Contributing
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Hover/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Hover/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 
-Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additioal customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
+Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additional customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
 
 # ⛔ License
 Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/master/LICENSE) file for more information.
