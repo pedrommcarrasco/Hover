@@ -10,7 +10,7 @@
 >
 > "to stay in one place in the air"
 
-Hover is a draggable **floating action button** (FAB) inspired by Apple's session [**Designing Fluid Interfaces**](https://developer.apple.com/wwdc18/803). Hover will always stick to the nearest corner to avoid blocking content and allows the user to send it to any other corner with a single swipe.
+Hover is a draggable **floating action button** (FAB) inspired by Apple's session [**Designing Fluid Interfaces**](https://developer.apple.com/wwdc18/803) & Nathan Gitter's [fluid-interfaces](https://github.com/nathangitter/fluid-interfaces). Hover will always stick to the nearest corner to avoid blocking content and allows the user to send it to any other corner with a single swipe.
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/Hover.svg)](https://cocoapods.org/pods/Hover)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -71,7 +71,8 @@ let hoverView = HoverView(with: configuration, items: items)
 view.addSubview(hoverView)
 hoverView.translatesAutoresizingMaskIntoConstraints = false
 
-
+// Apply Constraints
+// Never constrain to the safe area as Hover takes care of that
 NSLayoutConstraint.activate(
     [
         hoverView.topAnchor.constraint(equalTo: view.topAnchor),
