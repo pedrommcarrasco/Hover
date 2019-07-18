@@ -4,19 +4,19 @@
 <img src="https://github.com/pedrommcarrasco/Hover/blob/1.0.0/Design/demo.gif?raw=true" alt="Presentation" width="100%"/>
 </p>
 
-> **Hover** *(/ˈhɒv.ər/)*, *verb*
->
-> "to stay in one place in the air"
-
 [![CocoaPods](https://img.shields.io/cocoapods/v/Hover.svg)](https://cocoapods.org/pods/Hover)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE)
 
-# What's Hover?
+# 🎈 What's Hover?
+
+> **Hover** *(/ˈhɒv.ər/)*, *verb*
+>
+> "to stay in one place in the air"
 
 Hover is a draggable **floating action button** (FAB) inspired by Apple's session [**Designing Fluid Interfaces**](https://developer.apple.com/wwdc18/803). Hover will always stick to the nearest corner to avoid blocking content and allows the user to send it to any other corner with a single swipe.
 
-# Installation 📦 
+# 📦 Installation
 
 ## CocoaPods
 Add the following line to your `podfile`:
@@ -43,7 +43,7 @@ And then run the following command in terminal:
 carthage update
 ```
 
-# Usage Example ⌨️
+# ⌨️ Usage Example
 After installing **Hover**, you should start by importing the framework:
 
 ```swift
@@ -82,13 +82,13 @@ NSLayoutConstraint.activate(
 )
 ```
 
-#  Sample Project 📲
+# 📲 Sample Project
 There's a sample project in this repository with some samples of Hover called [Example](https://github.com/pedrommcarrasco/Hover/tree/1.0.0/Example).
 
-# Contributing 🙌 
+# 🙌 Contributing
 Feel free to contribute to this project by [reporting bugs](https://github.com/pedrommcarrasco/Hover/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or open [pull requests](https://github.com/pedrommcarrasco/Hover/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 
 Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additioal customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
 
-# License ⛔
+# ⛔ License
 Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/1.0.0/LICENSE) file for more information.
