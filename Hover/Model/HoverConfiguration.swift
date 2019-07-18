@@ -24,7 +24,7 @@ public struct HoverConfiguration {
     public var image: UIImage?
     /// Size of the floating button
     public var size: CGFloat
-    /// Dictates the size of the image shown in any button (imageSize = size * iconSizeRatio)
+    /// Dictates the size of the image shown in any button (imageSize = size * imageSizeRatio)
     public var imageSizeRatio: CGFloat
     /// Spacing between the floating button to the edges
     public var spacing: CGFloat
@@ -46,10 +46,10 @@ public struct HoverConfiguration {
     }
     
     // MARK: Init
-    public init(icon: UIImage? = nil,
+    public init(image: UIImage? = nil,
                 color: HoverColor = .color(.blue),
                 size: CGFloat = 60.0,
-                iconSizeRatio: CGFloat = 0.4,
+                imageSizeRatio: CGFloat = 0.4,
                 spacing: CGFloat = 12.0,
                 font: UIFont? = nil,
                 dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
@@ -57,9 +57,9 @@ public struct HoverConfiguration {
                 allowedPositions: Set<HoverPosition> = .all) {
         
         self.color = color
-        self.image = icon
+        self.image = image
         self.size = size
-        self.imageSizeRatio = iconSizeRatio
+        self.imageSizeRatio = imageSizeRatio
         self.spacing = spacing
         self.font = font
         self.dimColor = dimColor

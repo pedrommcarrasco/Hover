@@ -1,6 +1,6 @@
 {
   "name": "Hover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -9,10 +9,11 @@
   "authors": {
     "Pedro Carrasco": "https://twitter.com/pedrommcarrasco"
   },
-  "summary": "🎈 Summary",
+  "summary": "🎈 The smartest floating button",
+  "description": "Hover is a draggable floating action button (FAB) inspired by Apple's session Designing Fluid Interfaces & Nathan Gitter's fluid-interfaces. Hover will always stick to the nearest corner to avoid blocking content and allows the user to send it to any other corner with a single swipe.",
   "source": {
-    "git": "https://github.com/tonymillion/Hover.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/pedrommcarrasco/Hover.git",
+    "tag": "1.0.1"
   },
   "swift_versions": "5.0",
   "platforms": {
