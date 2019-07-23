@@ -11,11 +11,8 @@ import UIKit
 // MARK: - Add
 extension UIStackView {
     
-    func add(arrangedViews: UIView...) {
-        arrangedViews.forEach {
-            self.addArrangedSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+    func add(arrangedViews: UIView..., hidden: Bool = false) {
+        add(arrangedViews: arrangedViews, hidden: hidden)
     }
     
     func add(arrangedViews: [UIView], hidden: Bool = false) {
@@ -23,6 +20,11 @@ extension UIStackView {
             self.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.alpha = hidden ? 0.0 : 1.0
+        }
+    }
+    func removeAll() {
+        arrangedSubviews.forEach {
+            $0.removeFromSuperview()
         }
     }
 }

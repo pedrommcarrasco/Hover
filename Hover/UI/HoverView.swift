@@ -33,7 +33,15 @@ public class HoverView: UIView {
     
     // MARK: Outlets
     private let button: HoverButton
-    private let itemViews: [HoverItemView]
+    private var itemViews = [HoverItemView]() {
+        didSet {
+            animateState(to: false)
+            itemsStackView.removeAll()
+            itemsStackView.add(arrangedViews: itemViews, hidden: true)
+            adapt(to: currentAnchor)
+            itemViews.forEach { $0.onTap = onTapInButton }
+        }
+    }
     private let itemsStackView: UIStackView = .create {
         $0.spacing = Constant.interItemSpacing
         $0.axis = .vertical
@@ -48,6 +56,12 @@ public class HoverView: UIView {
     private var stackViewYConstraint = NSLayoutConstraint()
     
     // MARK: Properties
+    public var items = [HoverItem]() {
+        didSet {
+            itemViews = items.reversed().map { HoverItemView(with: $0, configuration: configuration.itemConfiguration) }
+        }
+    }
+    
     public var isEnabled = true {
         didSet {
             UIView.animate(withDuration: Constant.enableAnimationDuration) {
@@ -65,7 +79,6 @@ public class HoverView: UIView {
     // MARK: Private Properties
     private let anchors: [Anchor]
     private let configuration: HoverConfiguration
-    private let items: [HoverItem]
     private let panRecognizer = UIPanGestureRecognizer()
     private var state: State = .none
     private var isOpen = false
@@ -81,7 +94,7 @@ public class HoverView: UIView {
     }
     
     // MARK: Lifecycle
-    public init(with configuration: HoverConfiguration = .init(), items: [HoverItem] = .init()) {
+    public init(with configuration: HoverConfiguration = HoverConfiguration(), items: [HoverItem] = []) {
         
         guard !configuration.allowedPositions.isEmpty else {
             fatalError("`allowedPositions` can't be empty")
@@ -93,11 +106,11 @@ public class HoverView: UIView {
             fatalError("`allowedPositions` must contain the `initalPosition`")
         }
         
+        defer { self.items = items }
+        
         self.currentAnchor = currentAnchor
         self.configuration = configuration
         self.button = HoverButton(with: configuration.color, image: configuration.image, imageSizeRatio: configuration.imageSizeRatio)
-        self.itemViews = items.reversed().map { HoverItemView(with: $0, configuration: configuration.itemConfiguration) }
-        self.items = items
         super.init(frame: .zero)
         configure()
     }
@@ -136,7 +149,6 @@ private extension HoverView {
     func addSubviews() {
         add(layoutGuides: anchors.map { $0.guide })
         add(views: dimView, itemsStackView, button)
-        itemsStackView.add(arrangedViews: itemViews, hidden: true)
     }
     
     func defineConstraints() {
@@ -161,8 +173,6 @@ private extension HoverView {
                 dimView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ]
         )
-        
-        adapt(to: currentAnchor)
     }
     
     func setupSubviews() {
@@ -170,8 +180,6 @@ private extension HoverView {
         
         button.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPan(from:))))
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
-        
-        itemViews.forEach { $0.onTap = onTapInButton }
     }
 }
 
