@@ -16,8 +16,12 @@ public class HoverView: UIView {
         static let animationDamping: CGFloat = 0.8
         static let animationResponse: CGFloat = 0.5
         static let animationDuration = 0.4
+        static let enableAnimationDuration = 0.2
         static let anchorAnimationDuration = 0.15
         static let interItemSpacing: CGFloat = 12.0
+        static let disabledAlpha: CGFloat = 0.75
+        static let disabledTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
     }
     
     // MARK: State
@@ -42,6 +46,21 @@ public class HoverView: UIView {
     // MARK: Constraints
     private var stackViewXConstraint = NSLayoutConstraint()
     private var stackViewYConstraint = NSLayoutConstraint()
+    
+    // MARK: Properties
+    public var isEnabled = true {
+        didSet {
+            UIView.animate(withDuration: Constant.enableAnimationDuration) {
+                self.button.alpha = self.isEnabled ? 1.0 : Constant.disabledAlpha
+                self.button.transform = self.isEnabled ? .identity : Constant.disabledTransform
+                self.button.isEnabled = self.isEnabled
+            }
+            
+            if !isEnabled {
+                animateState(to: false)
+            }
+        }
+    }
     
     // MARK: Private Properties
     private let anchors: [Anchor]

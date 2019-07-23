@@ -1,5 +1,5 @@
 PODS:
-  - Hover (1.0.1)
+  - Hover (1.0.2)
 
 DEPENDENCIES:
   - Hover (from `..`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  Hover: 6b9703a147fee651708f2fe24aeb58ada4acfa9b
+  Hover: 047bb7a44fdf9e49bd201ceec84241e0893012ef
 
 PODFILE CHECKSUM: 4464a752690793fe72e3febd146ffc7ffb897004
 
