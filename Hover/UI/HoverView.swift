@@ -76,6 +76,8 @@ public class HoverView: UIView {
         }
     }
     
+    public var onPositionChange: ((HoverPosition) -> ())?
+    
     // MARK: Private Properties
     private let anchors: [Anchor]
     private let configuration: HoverConfiguration
@@ -90,6 +92,8 @@ public class HoverView: UIView {
             } else {
                 adapt(to: currentAnchor)
             }
+            
+            onPositionChange?(currentAnchor.position)
         }
     }
     
