@@ -107,4 +107,4 @@ Feel free to contribute to this project by [reporting bugs](https://github.com/p
 Hover was created for personal use but dynamic enough to be an open-source framework. As such, while functional, it may lack some additional customization. If there's something missing that you need, feel free to ask me here or on [Twitter](https://twitter.com/pedrommcarrasco).
 
 # ⛔ License
-Constrictor's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/master/LICENSE) file for more information.
+Hover's available under the MIT license. See the [LICENSE](https://github.com/pedrommcarrasco/Hover/blob/master/LICENSE) file for more information.
