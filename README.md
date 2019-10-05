@@ -43,6 +43,15 @@ And then run the following command in terminal:
 carthage update
 ```
 
+## Swift Package Manager
+
+To include Hover into a Swift Package Manager package, add it to the `dependencies` attribute defined in your `Package.swift` file. For example:
+```
+    dependencies: [
+        .package(url: "https://github.com/pedrommcarrasco/Hover.git", from: <version>),
+    ]
+```
+
 # ⌨️ Usage Example
 After installing **Hover**, you should start by importing the framework:
 
