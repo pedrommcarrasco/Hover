@@ -32,6 +32,8 @@ public struct HoverConfiguration {
     public var font: UIFont?
     /// Color of the overlay
     public var dimColor: UIColor
+    /// Opacity of the overlay
+    public var dimOpacity: CGFloat
     /// Initial position of the floating button
     public var initialPosition: HoverPosition
     /// Allowed positions in which the floating button can be placed
@@ -53,6 +55,7 @@ public struct HoverConfiguration {
                 spacing: CGFloat = 12.0,
                 font: UIFont? = nil,
                 dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
+                dimOpacity: CGFloat = 0.5,
                 initialPosition: HoverPosition = .bottomRight,
                 allowedPositions: Set<HoverPosition> = .all) {
         
@@ -63,6 +66,7 @@ public struct HoverConfiguration {
         self.spacing = spacing
         self.font = font
         self.dimColor = dimColor
+        self.dimOpacity = dimOpacity < 0 || dimOpacity > 1 ? 0.5 : dimOpacity
         self.initialPosition = initialPosition
         self.allowedPositions = allowedPositions
     }

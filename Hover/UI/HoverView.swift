@@ -253,7 +253,7 @@ private extension HoverView {
         itemsStackView.isUserInteractionEnabled = isOpening
         
         UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
-            self.dimView.alpha = isOpening ? 1.0 : 0.0
+            self.dimView.alpha = isOpening ? self.configuration.dimOpacity : 0.0
         }.startAnimation()
         
         anchor.position.yOrientation.reverseArrayIfNeeded(itemsStackView.arrangedSubviews).enumerated().forEach { (index, view) in

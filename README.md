@@ -63,7 +63,7 @@ Once imported, you can start using **Hover** like follows:
 
 ```swift
 // Create Hover's Configuration (all parameters have defaults)
-let configuration = HoverConfiguration(icon: UIImage(named: "add"), color: .gradient(top: .blue, bottom: .cyan))
+let configuration = HoverConfiguration(image: UIImage(named: "add"), color: .gradient(top: .blue, bottom: .cyan), dimColor: .black, dimOpacity: 0.5)
 
 // Create the items to display
 let items = [
