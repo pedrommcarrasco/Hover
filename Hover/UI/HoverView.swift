@@ -250,13 +250,10 @@ private extension HoverView {
 
     private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
         itemsStackView.isUserInteractionEnabled = isOpening
-        
-        UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
-            self.dimView.alpha = isOpening ? 1.0 : 0.0
-        }.startAnimation()
 
         let transform = imageExpandTransform(isOpening: isOpening)
         UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
+            self.dimView.alpha = isOpening ? 1.0 : 0.0
             self.button.imageView.transform = transform
         }.startAnimation()
         
