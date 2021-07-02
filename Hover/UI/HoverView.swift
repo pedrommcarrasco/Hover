@@ -285,7 +285,6 @@ private extension HoverView {
             return .identity
             
         case .rotate(let radianValue):
-
             let factor: CGFloat
 
             switch (currentAnchor.position.xOrientation, currentAnchor.position.yOrientation) {
