@@ -18,7 +18,6 @@ class HoverButton: UIControl {
         static let animationDuration = 0.5
         static let animationDamping: CGFloat = 0.4
         static let highlightColor = UIColor.white.withAlphaComponent(0.2)
-        static let rotationTransform = CGAffineTransform(rotationAngle: .pi * -0.25)
     }
     
     // MARK: Outlets
@@ -53,13 +52,17 @@ class HoverButton: UIControl {
 
     var isExpanded: Bool = false {
         didSet {
-            let transform: CGAffineTransform = isExpanded ? Constant.rotationTransform : .identity
+            let rotationValue: CGFloat = (.pi * 0.25) * (orientation == .leftToRight ? 1 : -1)
+            let rotationTransform = CGAffineTransform(rotationAngle: rotationValue)
+            let transform: CGAffineTransform = isExpanded ? rotationTransform: .identity
 
             UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
                 self.imageView.transform = transform
             }.startAnimation()
         }
     }
+
+    var orientation: Orientation.X = .rightToLeft
     
     // MARK: Lifecycle
     init(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {

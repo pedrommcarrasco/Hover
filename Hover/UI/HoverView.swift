@@ -302,5 +302,6 @@ private extension HoverView {
         NSLayoutConstraint.activate([stackViewXConstraint, stackViewYConstraint])
         
         itemViews.forEach { $0.orientation = currentAnchor.position.xOrientation }
+        button.orientation = currentAnchor.position.xOrientation
     }
 }
