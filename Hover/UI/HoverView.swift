@@ -21,7 +21,6 @@ public class HoverView: UIView {
         static let interItemSpacing: CGFloat = 12.0
         static let disabledAlpha: CGFloat = 0.75
         static let disabledTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        
     }
     
     // MARK: State
@@ -251,6 +250,7 @@ private extension HoverView {
     
     private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
         itemsStackView.isUserInteractionEnabled = isOpening
+        button.isExpanded = isOpening
         
         UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
             self.dimView.alpha = isOpening ? 1.0 : 0.0

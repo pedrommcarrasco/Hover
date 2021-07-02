@@ -18,6 +18,7 @@ class HoverButton: UIControl {
         static let animationDuration = 0.5
         static let animationDamping: CGFloat = 0.4
         static let highlightColor = UIColor.white.withAlphaComponent(0.2)
+        static let rotationTransform = CGAffineTransform(rotationAngle: .pi * -0.25)
     }
     
     // MARK: Outlets
@@ -46,6 +47,16 @@ class HoverButton: UIControl {
             UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
                 self.transform = transform
                 self.hightlightView.alpha = alpha
+            }.startAnimation()
+        }
+    }
+
+    var isExpanded: Bool = false {
+        didSet {
+            let transform: CGAffineTransform = isExpanded ? Constant.rotationTransform : .identity
+
+            UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
+                self.imageView.transform = transform
             }.startAnimation()
         }
     }
