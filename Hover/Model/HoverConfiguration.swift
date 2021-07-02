@@ -84,11 +84,10 @@ struct HoverItemConfiguration {
 
 // MARK: - ImageExpandAnimation
 public enum ImageExpandAnimation {
-    // No animation
+    /// No animation
     case none
 
     // Rotate considering the radian value.
     // It considers the X and Y orientation when animating.
     case rotate(_ radian: CGFloat)
 }
-
