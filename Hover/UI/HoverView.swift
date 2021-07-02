@@ -247,13 +247,17 @@ private extension HoverView {
             }
         }
     }
-    
+
     private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
         itemsStackView.isUserInteractionEnabled = isOpening
-        button.isExpanded = isOpening
         
         UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
             self.dimView.alpha = isOpening ? 1.0 : 0.0
+        }.startAnimation()
+
+        let transform = imageExpandTransform(isOpening: isOpening)
+        UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
+            self.button.imageView.transform = transform
         }.startAnimation()
         
         anchor.position.yOrientation.reverseArrayIfNeeded(itemsStackView.arrangedSubviews).enumerated().forEach { (index, view) in
@@ -272,6 +276,31 @@ private extension HoverView {
             }
             
             animator.startAnimation(afterDelay: Calculator.delay(for: index))
+        }
+    }
+
+    private func imageExpandTransform(isOpening: Bool) -> CGAffineTransform {
+        switch configuration.imageExpandAnimation {
+        case .none:
+            return .identity
+            
+        case .rotate(let radianValue):
+
+            let factor: CGFloat
+
+            switch (currentAnchor.position.xOrientation, currentAnchor.position.yOrientation) {
+            case (.leftToRight, .bottomToTop),
+                 (.rightToLeft, .topToBottom):
+                factor = 1
+            case (.leftToRight, .topToBottom),
+                 (.rightToLeft, .bottomToTop):
+                factor = -1
+            }
+
+            let rotationValue: CGFloat = radianValue * factor
+            let rotationTransform = CGAffineTransform(rotationAngle: rotationValue)
+
+            return isOpening ? rotationTransform : .identity
         }
     }
 }
@@ -302,6 +331,5 @@ private extension HoverView {
         NSLayoutConstraint.activate([stackViewXConstraint, stackViewYConstraint])
         
         itemViews.forEach { $0.orientation = currentAnchor.position.xOrientation }
-        button.orientation = currentAnchor.position.xOrientation
     }
 }

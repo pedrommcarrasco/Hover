@@ -36,6 +36,8 @@ public struct HoverConfiguration {
     public var initialPosition: HoverPosition
     /// Allowed positions in which the floating button can be placed
     public var allowedPositions: Set<HoverPosition>
+    /// Define the animation of the HoverButton's image when expding items
+    public var imageExpandAnimation: ImageExpandAnimation
     
     var itemConfiguration: HoverItemConfiguration {
         return HoverItemConfiguration(size: size * Constant.itemSizeRatio,
@@ -54,7 +56,8 @@ public struct HoverConfiguration {
                 font: UIFont? = nil,
                 dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
                 initialPosition: HoverPosition = .bottomRight,
-                allowedPositions: Set<HoverPosition> = .all) {
+                allowedPositions: Set<HoverPosition> = .all,
+                imageExpandAnimation: ImageExpandAnimation = .none) {
         
         self.color = color
         self.image = image
@@ -65,6 +68,7 @@ public struct HoverConfiguration {
         self.dimColor = dimColor
         self.initialPosition = initialPosition
         self.allowedPositions = allowedPositions
+        self.imageExpandAnimation = imageExpandAnimation
     }
 }
 
@@ -76,5 +80,15 @@ struct HoverItemConfiguration {
     let margin: CGFloat
     let font: UIFont?
     let initialXOrientation: Orientation.X
+}
+
+// MARK: - ImageExpandAnimation
+public enum ImageExpandAnimation {
+    // No animation
+    case none
+
+    // Rotate considering the radian value.
+    // It considers the X and Y orientation when animating.
+    case rotate(_ radian: CGFloat)
 }
 

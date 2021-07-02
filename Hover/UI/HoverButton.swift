@@ -21,11 +21,11 @@ class HoverButton: UIControl {
     }
     
     // MARK: Outlets
-    private var gradientLayer: CAGradientLayer?
-    private let imageView: UIImageView = .create {
+    let imageView: UIImageView = .create {
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = false
     }
+    private var gradientLayer: CAGradientLayer?
     private let hightlightView: UIView = .create {
         $0.backgroundColor = Constant.highlightColor
         $0.isUserInteractionEnabled = false
@@ -49,20 +49,6 @@ class HoverButton: UIControl {
             }.startAnimation()
         }
     }
-
-    var isExpanded: Bool = false {
-        didSet {
-            let rotationValue: CGFloat = (.pi * 0.25) * (orientation == .leftToRight ? 1 : -1)
-            let rotationTransform = CGAffineTransform(rotationAngle: rotationValue)
-            let transform: CGAffineTransform = isExpanded ? rotationTransform: .identity
-
-            UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
-                self.imageView.transform = transform
-            }.startAnimation()
-        }
-    }
-
-    var orientation: Orientation.X = .rightToLeft
     
     // MARK: Lifecycle
     init(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
