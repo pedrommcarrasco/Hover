@@ -21,11 +21,11 @@ class HoverButton: UIControl {
     }
     
     // MARK: Outlets
-    private var gradientLayer: CAGradientLayer?
-    private let imageView: UIImageView = .create {
+    let imageView: UIImageView = .create {
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = false
     }
+    private var gradientLayer: CAGradientLayer?
     private let hightlightView: UIView = .create {
         $0.backgroundColor = Constant.highlightColor
         $0.isUserInteractionEnabled = false

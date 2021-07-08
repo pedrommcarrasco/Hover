@@ -22,6 +22,8 @@ public struct HoverConfiguration {
     public var color: HoverColor
     /// Image displayed in the floating button
     public var image: UIImage?
+    /// Define the animation of the HoverButton's image when expding items
+    public var imageExpandAnimation: ImageExpandAnimation
     /// Size of the floating button
     public var size: CGFloat
     /// Dictates the size of the image shown in any button (imageSize = size * imageSizeRatio)
@@ -47,6 +49,7 @@ public struct HoverConfiguration {
     
     // MARK: Init
     public init(image: UIImage? = nil,
+                imageExpandAnimation: ImageExpandAnimation = .none,
                 color: HoverColor = .color(.blue),
                 size: CGFloat = 60.0,
                 imageSizeRatio: CGFloat = 0.4,
@@ -58,6 +61,7 @@ public struct HoverConfiguration {
         
         self.color = color
         self.image = image
+        self.imageExpandAnimation = imageExpandAnimation
         self.size = size
         self.imageSizeRatio = imageSizeRatio
         self.spacing = spacing
@@ -78,3 +82,11 @@ struct HoverItemConfiguration {
     let initialXOrientation: Orientation.X
 }
 
+// MARK: - ImageExpandAnimation
+public enum ImageExpandAnimation {
+    /// No animation
+    case none
+
+    /// Rotate considering the radian value. It considers the X and Y orientation when animating.
+    case rotate(_ radian: CGFloat)
+}

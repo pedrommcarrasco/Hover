@@ -21,7 +21,6 @@ public class HoverView: UIView {
         static let interItemSpacing: CGFloat = 12.0
         static let disabledAlpha: CGFloat = 0.75
         static let disabledTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        
     }
     
     // MARK: State
@@ -248,12 +247,14 @@ private extension HoverView {
             }
         }
     }
-    
+
     private func animate(isOpening: Bool, anchor: Anchor, completion: (() -> Void)? = nil) {
         itemsStackView.isUserInteractionEnabled = isOpening
-        
-        UIViewPropertyAnimator(duration: Constant.animationDuration, curve: .easeInOut) {
+
+        let transform = imageExpandTransform(isOpening: isOpening)
+        UIViewPropertyAnimator(duration: Constant.animationDuration, dampingRatio: Constant.animationDamping) {
             self.dimView.alpha = isOpening ? 1.0 : 0.0
+            self.button.imageView.transform = transform
         }.startAnimation()
         
         anchor.position.yOrientation.reverseArrayIfNeeded(itemsStackView.arrangedSubviews).enumerated().forEach { (index, view) in
@@ -272,6 +273,30 @@ private extension HoverView {
             }
             
             animator.startAnimation(afterDelay: Calculator.delay(for: index))
+        }
+    }
+
+    private func imageExpandTransform(isOpening: Bool) -> CGAffineTransform {
+        switch configuration.imageExpandAnimation {
+        case .none:
+            return .identity
+            
+        case .rotate(let radianValue):
+            let factor: CGFloat
+
+            switch (currentAnchor.position.xOrientation, currentAnchor.position.yOrientation) {
+            case (.leftToRight, .bottomToTop),
+                 (.rightToLeft, .topToBottom):
+                factor = 1
+            case (.leftToRight, .topToBottom),
+                 (.rightToLeft, .bottomToTop):
+                factor = -1
+            }
+
+            let rotationValue: CGFloat = radianValue * factor
+            let rotationTransform = CGAffineTransform(rotationAngle: rotationValue)
+
+            return isOpening ? rotationTransform : .identity
         }
     }
 }
