@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = 'Hover'
-    spec.version = '1.5.1'
+    spec.version = '1.6.0'
     spec.license = { :type => 'MIT', :file => 'LICENSE' }
     spec.homepage = 'https://github.com/pedrommcarrasco/Hover'
     spec.authors = { 'Pedro Carrasco' => 'https://twitter.com/pedrommcarrasco' }
