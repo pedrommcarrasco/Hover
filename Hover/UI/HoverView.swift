@@ -134,7 +134,7 @@ public extension HoverView {
         let hitView = super.hitTest(point, with: event)
         if hitView == self {
             onTouchInDim()
-            return nil
+            if state == .none { return nil }
         }
         return hitView
     }
