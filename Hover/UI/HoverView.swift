@@ -156,7 +156,7 @@ private extension HoverView {
     
     func defineConstraints() {
         anchors.forEach {
-            $0.position.configurePosition(of: $0.guide, inside: self, with: self.configuration.insets)
+            $0.position.configurePosition(of: $0.guide, inside: self, with: self.configuration.padding)
             NSLayoutConstraint.activate(
                 [
                     $0.guide.widthAnchor.constraint(equalToConstant: self.configuration.size),
@@ -312,25 +312,25 @@ private extension HoverView {
             stackViewXConstraint = itemsStackView.leadingAnchor.constraint(equalTo: anchor.guide.leadingAnchor,
                                                                            constant: self.configuration.itemConfiguration.margin)
             stackViewYConstraint = itemsStackView.topAnchor.constraint(equalTo: currentAnchor.guide.bottomAnchor,
-                                                                       constant: self.configuration.insets.bottom)
+                                                                       constant: self.configuration.padding.bottom)
         case .topRight:
             itemsStackView.add(arrangedViews: itemViews.reversed(), hidden: true)
             stackViewXConstraint = itemsStackView.trailingAnchor.constraint(equalTo: anchor.guide.trailingAnchor,
                                                                             constant: -self.configuration.itemConfiguration.margin)
             stackViewYConstraint = itemsStackView.topAnchor.constraint(equalTo: currentAnchor.guide.bottomAnchor,
-                                                                       constant: self.configuration.insets.bottom)
+                                                                       constant: self.configuration.padding.bottom)
         case .bottomLeft:
             itemsStackView.add(arrangedViews: itemViews, hidden: true)
             stackViewXConstraint = itemsStackView.leadingAnchor.constraint(equalTo: anchor.guide.leadingAnchor,
                                                                            constant: self.configuration.itemConfiguration.margin)
             stackViewYConstraint = itemsStackView.bottomAnchor.constraint(equalTo: currentAnchor.guide.topAnchor,
-                                                                          constant: -self.configuration.insets.top)
+                                                                          constant: -self.configuration.padding.top)
         case .bottomRight:
             itemsStackView.add(arrangedViews: itemViews, hidden: true)
             stackViewXConstraint = itemsStackView.trailingAnchor.constraint(equalTo: anchor.guide.trailingAnchor,
                                                                             constant: -self.configuration.itemConfiguration.margin)
             stackViewYConstraint = itemsStackView.bottomAnchor.constraint(equalTo: currentAnchor.guide.topAnchor,
-                                                                          constant: -self.configuration.insets.top)
+                                                                          constant: -self.configuration.padding.top)
         }
         NSLayoutConstraint.activate([stackViewXConstraint, stackViewYConstraint])
         
