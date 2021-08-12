@@ -29,7 +29,7 @@ public struct HoverConfiguration {
     /// Dictates the size of the image shown in any button (imageSize = size * imageSizeRatio)
     public var imageSizeRatio: CGFloat
     /// Spacing between the floating button to the edges
-    public var spacing: CGFloat
+    public var padding: UIEdgeInsets
     /// Font used in items' labels
     public var font: UIFont?
     /// Color of the overlay
@@ -53,7 +53,7 @@ public struct HoverConfiguration {
                 color: HoverColor = .color(.blue),
                 size: CGFloat = 60.0,
                 imageSizeRatio: CGFloat = 0.4,
-                spacing: CGFloat = 12.0,
+                padding: UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12),
                 font: UIFont? = nil,
                 dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
                 initialPosition: HoverPosition = .bottomRight,
@@ -64,7 +64,7 @@ public struct HoverConfiguration {
         self.imageExpandAnimation = imageExpandAnimation
         self.size = size
         self.imageSizeRatio = imageSizeRatio
-        self.spacing = spacing
+        self.padding = padding
         self.font = font
         self.dimColor = dimColor
         self.initialPosition = initialPosition
