@@ -81,6 +81,7 @@ private extension HoverItemView {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapInButton))
         label.addGestureRecognizer(tapGesture)
+        label.isUserInteractionEnabled = true
     }
 }
 
