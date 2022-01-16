@@ -237,7 +237,7 @@ private extension HoverView {
 // MARK: - Animations
 private extension HoverView {
     
-    func animateState(to isOpen: Bool) {
+    func animateState(to isOpen: Bool, completion: (() -> Void)? = nil) {
         guard self.isOpen != isOpen else { return }
         self.isOpen = isOpen
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -252,6 +252,7 @@ private extension HoverView {
                 }
                 
                 self.state = .none
+                completion?()
             }
         }
     }
