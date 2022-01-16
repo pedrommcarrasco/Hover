@@ -18,8 +18,10 @@ public struct HoverConfiguration {
     }
     
     // MARK: Properties
+    /// Color  of the image insde the  floating button
+    public var tintColor: UIColor
     /// Color / Gradient of the floating button
-    public var color: HoverColor
+    public var backgroundColor: HoverColor
     /// Image displayed in the floating button
     public var image: UIImage?
     /// Define the animation of the HoverButton's image when expding items
@@ -40,26 +42,31 @@ public struct HoverConfiguration {
     public var allowedPositions: Set<HoverPosition>
     
     var itemConfiguration: HoverItemConfiguration {
-        return HoverItemConfiguration(size: size * Constant.itemSizeRatio,
-                                      imageSizeRatio: imageSizeRatio,
-                                      margin: size * ((1 - Constant.itemSizeRatio) / 2),
-                                      font: font,
-                                      initialXOrientation: initialPosition.xOrientation)
+        return HoverItemConfiguration(
+            size: size * Constant.itemSizeRatio,
+            imageSizeRatio: imageSizeRatio,
+            margin: size * ((1 - Constant.itemSizeRatio) / 2),
+            font: font,
+            initialXOrientation: initialPosition.xOrientation
+        )
     }
     
     // MARK: Init
-    public init(image: UIImage? = nil,
-                imageExpandAnimation: ImageExpandAnimation = .none,
-                color: HoverColor = .color(.blue),
-                size: CGFloat = 60.0,
-                imageSizeRatio: CGFloat = 0.4,
-                padding: UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12),
-                font: UIFont? = nil,
-                dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
-                initialPosition: HoverPosition = .bottomRight,
-                allowedPositions: Set<HoverPosition> = .all) {
-        
-        self.color = color
+    public init(
+        image: UIImage? = nil,
+        imageExpandAnimation: ImageExpandAnimation = .none,
+        tintColor: UIColor = .white,
+        backgroundColor: HoverColor = .color(.blue),
+        size: CGFloat = 60.0,
+        imageSizeRatio: CGFloat = 0.4,
+        padding: UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12),
+        font: UIFont? = nil,
+        dimColor: UIColor = UIColor.black.withAlphaComponent(0.75),
+        initialPosition: HoverPosition = .bottomRight,
+        allowedPositions: Set<HoverPosition> = .all
+    ) {
+        self.tintColor = tintColor
+        self.backgroundColor = backgroundColor
         self.image = image
         self.imageExpandAnimation = imageExpandAnimation
         self.size = size

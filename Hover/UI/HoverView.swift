@@ -113,7 +113,7 @@ public class HoverView: UIView {
         
         self.currentAnchor = currentAnchor
         self.configuration = configuration
-        self.button = HoverButton(with: configuration.color, image: configuration.image, imageSizeRatio: configuration.imageSizeRatio)
+        self.button = HoverButton(tintColor: configuration.tintColor, backgroundColor: configuration.backgroundColor, image: configuration.image, imageSizeRatio: configuration.imageSizeRatio)
         super.init(frame: .zero)
         configure()
     }

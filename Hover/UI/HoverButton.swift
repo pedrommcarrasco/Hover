@@ -51,9 +51,9 @@ class HoverButton: UIControl {
     }
     
     // MARK: Lifecycle
-    init(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
+    init(tintColor: UIColor, backgroundColor: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
         super.init(frame: .zero)
-        configure(with: color, image: image, imageSizeRatio: imageSizeRatio)
+        configure(tintColor: tintColor, backgroundColor: backgroundColor, image: image, imageSizeRatio: imageSizeRatio)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,10 +74,10 @@ class HoverButton: UIControl {
 // MARK: - Configuration
 private extension HoverButton {
     
-    func configure(with color: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
+    func configure(tintColor: UIColor, backgroundColor: HoverColor, image: UIImage?, imageSizeRatio: CGFloat) {
         addSubviews()
         defineConstraints(with: imageSizeRatio)
-        setupSubviews(with: color, image: image)
+        setupSubviews(tintColor: tintColor, backgroundColor: backgroundColor, image: image)
     }
     
     func addSubviews() {
@@ -100,12 +100,13 @@ private extension HoverButton {
         )
     }
     
-    func setupSubviews(with color: HoverColor, image: UIImage?) {
+    func setupSubviews(tintColor: UIColor, backgroundColor: HoverColor, image: UIImage?) {
         imageView.image = image
+        imageView.tintColor = tintColor
         
-        switch color {
+        switch backgroundColor {
         case .color(let color):
-            backgroundColor = color
+            self.backgroundColor = color
         case .gradient(let top, let bottom):
             gradientLayer = makeGradientLayer()
             gradientLayer?.colors = [bottom, top].map { $0.cgColor }
