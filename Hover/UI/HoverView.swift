@@ -294,12 +294,12 @@ private extension HoverView {
             let factor: CGFloat
 
             switch (currentAnchor.position.xOrientation, currentAnchor.position.yOrientation) {
-            case (.leftToRight, .bottomToTop),
-                 (.rightToLeft, .topToBottom):
-                factor = 1
             case (.leftToRight, .topToBottom),
-                 (.rightToLeft, .bottomToTop):
+                 (.rightToLeft, .topToBottom):
                 factor = -1
+            case (.leftToRight, .bottomToTop),
+                 (.rightToLeft, .bottomToTop):
+                factor = 1
             }
 
             let rotationValue: CGFloat = radianValue * factor
