@@ -140,6 +140,14 @@ public extension HoverView {
     }
 }
 
+// MARK: - Public API
+
+public extension HoverView {
+    func collapse() {
+        animateState(to: false, completion: nil)
+    }
+}
+
 // MARK: - Configuration
 private extension HoverView {
     
