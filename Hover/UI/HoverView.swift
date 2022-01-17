@@ -63,14 +63,21 @@ public class HoverView: UIView {
     
     public var isEnabled = true {
         didSet {
-            UIView.animate(withDuration: Constant.enableAnimationDuration) {
-                self.button.alpha = self.isEnabled ? 1.0 : Constant.disabledAlpha
-                self.button.transform = self.isEnabled ? .identity : Constant.disabledTransform
-                self.button.isEnabled = self.isEnabled
+            let isEnabledAnimation = {
+                UIView.animate(withDuration: Constant.enableAnimationDuration) {
+                    self.button.alpha = self.isEnabled ? 1.0 : Constant.disabledAlpha
+                    self.button.transform = self.isEnabled ? .identity : Constant.disabledTransform
+                    self.button.isEnabled = self.isEnabled
+                }
             }
+
             
             if !isEnabled {
-                animateState(to: false)
+                animateState(to: false) {
+                    isEnabledAnimation()
+                }
+            } else {
+                isEnabledAnimation()
             }
         }
     }
