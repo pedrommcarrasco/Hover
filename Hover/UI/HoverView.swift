@@ -19,8 +19,8 @@ public class HoverView: UIView {
         static let enableAnimationDuration = 0.2
         static let anchorAnimationDuration = 0.15
         static let interItemSpacing: CGFloat = 12.0
-        static let disabledAlpha: CGFloat = 0.75
-        static let disabledTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        static let disabledAlpha: CGFloat = 0.70
+        static let disabledTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     }
     
     // MARK: State
