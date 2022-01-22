@@ -38,7 +38,11 @@ public class HoverView: UIView {
             itemsStackView.removeAll()
             itemsStackView.add(arrangedViews: itemViews, hidden: true)
             adapt(to: currentAnchor)
-            itemViews.forEach { $0.onTap = onTapInButton }
+            itemViews.forEach {
+                $0.onTap = { [weak self] in
+                    self?.onTapInButton($0)
+                }
+            }
         }
     }
     private let itemsStackView: UIStackView = .create {
@@ -202,8 +206,10 @@ private extension HoverView {
     }
     
     @objc
-    func onTapInButton() {
-        animateState(to: !isOpen)
+    func onTapInButton(_ completion: @escaping () -> Void) {
+        animateState(to: !isOpen) {
+            completion()
+        }
     }
     
     @objc
