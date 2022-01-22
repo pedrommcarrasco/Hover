@@ -38,13 +38,7 @@ public class HoverView: UIView {
             itemsStackView.removeAll()
             itemsStackView.add(arrangedViews: itemViews, hidden: true)
             adapt(to: currentAnchor)
-            itemViews.enumerated().forEach { [weak self] enumratedItem in
-                enumratedItem.element.onTap = { [weak self] in
-                    self?.onTapInButton { [weak self] in
-                        self?.items[enumratedItem.offset].onTap()
-                    }
-                }
-            }
+            itemViews.forEach { $0.onTap = onTapInButton }
         }
     }
     private let itemsStackView: UIStackView = .create {
@@ -208,10 +202,8 @@ private extension HoverView {
     }
     
     @objc
-    func onTapInButton(_ action: @escaping () -> Void) {
-        animateState(to: !isOpen) {
-            action()
-        }
+    func onTapInButton() {
+        animateState(to: !isOpen)
     }
     
     @objc
