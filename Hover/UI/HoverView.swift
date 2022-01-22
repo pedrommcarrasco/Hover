@@ -38,11 +38,7 @@ public class HoverView: UIView {
             itemsStackView.removeAll()
             itemsStackView.add(arrangedViews: itemViews, hidden: true)
             adapt(to: currentAnchor)
-            itemViews.forEach {
-                $0.onTap = { [weak self] in
-                    self?.onTapInButton($0)
-                }
-            }
+            itemViews.forEach { $0.onTap = onTapInButton }
         }
     }
     private let itemsStackView: UIStackView = .create {
@@ -148,7 +144,7 @@ public extension HoverView {
 
 public extension HoverView {
     func collapse() {
-        animateState(to: false, completion: nil)
+        animateState(to: false)
     }
 }
 
@@ -206,10 +202,8 @@ private extension HoverView {
     }
     
     @objc
-    func onTapInButton(_ completion: @escaping () -> Void) {
-        animateState(to: !isOpen) {
-            completion()
-        }
+    func onTapInButton() {
+        animateState(to: !isOpen)
     }
     
     @objc
@@ -243,7 +237,7 @@ private extension HoverView {
 // MARK: - Animations
 private extension HoverView {
     
-    func animateState(to isOpen: Bool, completion: (() -> Void)? = nil) {
+    func animateState(to isOpen: Bool) {
         guard self.isOpen != isOpen else { return }
         self.isOpen = isOpen
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -258,7 +252,6 @@ private extension HoverView {
                 }
                 
                 self.state = .none
-                completion?()
             }
         }
     }

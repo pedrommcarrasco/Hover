@@ -21,7 +21,7 @@ class HoverItemView: UIStackView {
     private let label = UILabel()
     
     // MARK: Properties
-    var onTap: ((@escaping () -> Void) -> ())?
+    var onTap: (() -> ())?
     var orientation: Orientation.X {
         didSet { adapt(to: orientation) }
     }
@@ -85,7 +85,7 @@ private extension HoverItemView {
     
     @objc
     func onTapInButton() {
-        onTap?(item.onTap)
+        item.onTap()
     }
 }
 
