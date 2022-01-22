@@ -85,9 +85,7 @@ private extension HoverItemView {
     
     @objc
     func onTapInButton() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-            self?.item.onTap()
-        }
+        self?.item.onTap()
     }
 }
 
