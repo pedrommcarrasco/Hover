@@ -18,10 +18,12 @@ public struct HoverConfiguration {
     }
     
     // MARK: Properties
-    /// Color  of the image insde the  floating button
+    /// Color  of the image inside the  floating button
     public var tintColor: UIColor
     /// Color / Gradient of the floating button
     public var backgroundColor: HoverColor
+    /// Color of the items' text
+    public var itemsTextColor: UIColor
     /// Image displayed in the floating button
     public var image: UIImage?
     /// Define the animation of the HoverButton's image when expding items
@@ -47,7 +49,8 @@ public struct HoverConfiguration {
             imageSizeRatio: imageSizeRatio,
             margin: size * ((1 - Constant.itemSizeRatio) / 2),
             font: font,
-            initialXOrientation: initialPosition.xOrientation
+            initialXOrientation: initialPosition.xOrientation,
+            color: itemsTextColor
         )
     }
     
@@ -57,6 +60,7 @@ public struct HoverConfiguration {
         imageExpandAnimation: ImageExpandAnimation = .none,
         tintColor: UIColor = .white,
         backgroundColor: HoverColor = .color(.blue),
+        itemsTextColor: UIColor = .white,
         size: CGFloat = 60.0,
         imageSizeRatio: CGFloat = 0.4,
         padding: UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12),
@@ -76,6 +80,7 @@ public struct HoverConfiguration {
         self.dimColor = dimColor
         self.initialPosition = initialPosition
         self.allowedPositions = allowedPositions
+        self.itemsTextColor = itemsTextColor
     }
 }
 
@@ -87,6 +92,7 @@ struct HoverItemConfiguration {
     let margin: CGFloat
     let font: UIFont?
     let initialXOrientation: Orientation.X
+    let color: UIColor
 }
 
 // MARK: - ImageExpandAnimation

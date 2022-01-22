@@ -18,9 +18,7 @@ class HoverItemView: UIStackView {
     
     // MARK: Outlets
     private let button: HoverButton
-    private let label: UILabel = .create {
-        $0.textColor = .white
-    }
+    private let label = UILabel()
     
     // MARK: Properties
     var onTap: (() -> ())?
@@ -42,6 +40,7 @@ class HoverItemView: UIStackView {
         }
         
         self.label.text = item.title
+        self.label.textColor = configuration.color
 
         super.init(frame: .zero)
         configure(with: configuration)
