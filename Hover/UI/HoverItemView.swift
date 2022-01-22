@@ -85,6 +85,7 @@ private extension HoverItemView {
     
     @objc
     func onTapInButton() {
+        onTap?()
         item.onTap()
     }
 }
