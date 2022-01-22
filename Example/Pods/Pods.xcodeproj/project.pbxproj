@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E2DC0BCEFB6129B3C8B9E6ADDC02AB1 /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35E5990466EF43AF18769BF368B6BE /* CGPoint+Operators.swift */; };
-		212104786D124ADE78417234712B40CE /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9983369CA5BF721FB4B0DD7960B8E6 /* HoverButton.swift */; };
-		3109FBC17B216A2608B98A79FF30E7E7 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 156BF54520F2121642B61B54902E7808 /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		46A71D317C2C9C7D1B7506AE8BAEAF7B /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B772F33279B6BA44B3F1EA09792D3AB /* Orientation.swift */; };
-		52B788B4C7F533CB89BFB743B0024B90 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A10118860486B1C21B46B8EC8C08425 /* Pods-Example-dummy.m */; };
-		68B02716D69E094C6873CA315CB66324 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A818DA832B38C28BE1E8C3E96E077EC /* Anchor.swift */; };
-		76B26B8F648C1DD30E21698954DA07DE /* HoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87B17B79FAF4483EF815D4CDFAF85B /* HoverConfiguration.swift */; };
-		7D063A542FC5C0D1518175F8B8CAB6FB /* Hover-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7E7788FD04F162D35C67F94D0AF193 /* Hover-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		882348AEE501CD52DD2651259A45578C /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171A829A80FB50CC81D798CE4FBFCDB7 /* HoverView.swift */; };
-		8E19FE8FEBAB88DBFB28D102EBB6CA18 /* HoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5673257584C2B744DD58E20C76529C5 /* HoverItem.swift */; };
-		9150320427733CD3D4A523E07FBD29D0 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF79BF61C9FA52D348885557E7DF628 /* DimView.swift */; };
-		98811863C4F4BF3206DB57FA7DBBDBB0 /* Hover-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BE10D1FBA8340E2477F9A64688992 /* Hover-dummy.m */; };
-		AEA9F8E8E18913F8F0D4CEEAA44F25BC /* HoverColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDD5FB710EEB67F09983EFE45ECEEC /* HoverColor.swift */; };
-		BB7B46030C0A6A569ED0BE86071CA438 /* HoverItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31042812DF9592F5B1C97A61DE727270 /* HoverItemView.swift */; };
-		C46AA71A091C3FCDD7AC3A860CD760D4 /* NSObject+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C557B59AE7710FE23363EAABA8A7CC /* NSObject+Create.swift */; };
-		C7F6322C0127A5E4759A2068C5098DA6 /* UIStackView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F46417BD362809D5EA2BA93AE23403 /* UIStackView+Add.swift */; };
-		CB0F12D3CE4ADBB70843FA3DD4C3546C /* UISpringTimingParameters+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5022FAC85616337D4163367733A27644 /* UISpringTimingParameters+Init.swift */; };
-		D43ECCFCF9E53CFE1F800AB699569740 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A4A425FCC093A829869D5684AA413 /* CGRect+Center.swift */; };
-		E9184D6C51D0F5A00B597C852CC23182 /* UIView+Decorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0683CF412E74DD02DEF439F8E8A70 /* UIView+Decorators.swift */; };
-		ED2F9FA8B67B5390D663ACEBE78A2D2D /* CALayer+Decorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2088447B9F059D296B03F6E63B900BD /* CALayer+Decorators.swift */; };
-		EF4FFCE6B747F1D90389D18BD3D32E3E /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277702533A34979D0AB0F77C660C9684 /* UIView+Add.swift */; };
-		F12743CEFE540D717BA713C7AEEE49D1 /* HoverPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62937AF8AC1DB7DA3FE4B60CB69E21B3 /* HoverPosition.swift */; };
-		FCC8A7B5724090AE6A97F09D74B667F6 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767BFE2EBE19D1FD24ADF094508A15B1 /* Calculator.swift */; };
-		FED1F3CDCF747C52F49B4AEBF7BB6851 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9C6A0E9B8C982C3A81737E55D6542C /* CGPoint+Distance.swift */; };
+		01DD80478C21652DA3948A47A6A3EAF2 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204198FC33E7655972411EA89DC8D57 /* Anchor.swift */; };
+		229A78225A74DE377453BA6D2A6DF385 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3E0B339E6A9A50EBA3626327133E9 /* Calculator.swift */; };
+		24748E6CD97FD355FD29F033F8C49ECF /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0F9F8660A86565F7F4D3C2D8DBE5 /* CGPoint+Operators.swift */; };
+		2D64FCE2FCD441723E06B19BFB0CDF0B /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05012CA28344E05CEFAACDE30455A9 /* HoverView.swift */; };
+		2E2B9A4DE366AEA2DB47D1D94C102575 /* Hover-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C335503CD88311F3892E080831B801EC /* Hover-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6100CFA696B88C8F76DBD4CAE2F8E07E /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524E053A477525D1F113186C422C69 /* DimView.swift */; };
+		62FD950FD97F00BAECD6400B4A9996CD /* HoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090FD27425CD4ED42DF7AD70156829D /* HoverConfiguration.swift */; };
+		70D379E7C0261E90A7223172D848A361 /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D96A375756233E8CEA5F7AAB359B98 /* UIView+Add.swift */; };
+		8029D31ADA222A59DCA4AF230178B29D /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A10118860486B1C21B46B8EC8C08425 /* Pods-Example-dummy.m */; };
+		838346E76CF274F21940FDA49D235D11 /* UISpringTimingParameters+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B8E890E11174383CD7C36292F634D /* UISpringTimingParameters+Init.swift */; };
+		860713FD11F0FC8658E99FF094AA03C8 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F913715DC45CF0979618B018A101FAF /* CGPoint+Distance.swift */; };
+		87572B142803BA72ED81FD61261909E0 /* Hover-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D97DCBAC39FEA1A7437F1DEE78D93A2 /* Hover-dummy.m */; };
+		8901FAEDC51628AD5AC46320E6A23E17 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710D813756C8406EDF93DD5F73927F5 /* HoverButton.swift */; };
+		966E35A6311EE32279DA482C850CF7AA /* UIStackView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E5BA94B69D0CEBA6B5127B2F13B7B /* UIStackView+Add.swift */; };
+		975938F92C5788DE339E6CE7C9A2369F /* HoverPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A788CE5729FFADF21490E27F82B532 /* HoverPosition.swift */; };
+		9C11F1B715E906010D66F5133FAB0BED /* HoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107193AA7A3FD573FB6A41BB7FE38EC1 /* HoverItem.swift */; };
+		B651695167B1CA124859B355C7FCACE9 /* CALayer+Decorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F98EDB7B56466E0875A36C359FE06 /* CALayer+Decorators.swift */; };
+		C12290D57A999227119EF689E13348DE /* NSObject+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A444F6CEA8E9A8F633FF47F7F59AA /* NSObject+Create.swift */; };
+		CE8A5E749C1610FE228242A4C1D693CC /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E70CFCAB8DC009BAD0702F6B4C407 /* CGRect+Center.swift */; };
+		DF639891E06EB60287402E97FD1E3D2D /* UIView+Decorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB65538CCF8EE7B7F2C27DC7C791DDF1 /* UIView+Decorators.swift */; };
+		E18272AE93FCE8FE325019A64220AF7A /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 156BF54520F2121642B61B54902E7808 /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA6CF383BC669D9888A874928BDE6FF9 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C164EFF1C3736226D30D72685EE404 /* Orientation.swift */; };
+		F320BAE6D2D71160C55046B0407FFD90 /* HoverItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB10A0B441E4CD9B017218FD39BDD6 /* HoverItemView.swift */; };
+		F4F706CAC38185CD5A87B23528A906B5 /* HoverColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FC1EB5B07D1CE8E6A92F2CE6A1924B /* HoverColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38988C848787F71919E7EB2CD9FDF443 /* PBXContainerItemProxy */ = {
+		6ADB458DE96EA1C4DE39FF6E5BDAD77C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -44,55 +44,56 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C557B59AE7710FE23363EAABA8A7CC /* NSObject+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSObject+Create.swift"; sourceTree = "<group>"; };
+		00C164EFF1C3736226D30D72685EE404 /* Orientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		0D97DCBAC39FEA1A7437F1DEE78D93A2 /* Hover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hover-dummy.m"; sourceTree = "<group>"; };
+		107193AA7A3FD573FB6A41BB7FE38EC1 /* HoverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverItem.swift; sourceTree = "<group>"; };
 		156BF54520F2121642B61B54902E7808 /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		171A829A80FB50CC81D798CE4FBFCDB7 /* HoverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
-		1F667CC0E19EAF34E5A4119E2121F585 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Example.a"; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23F0683CF412E74DD02DEF439F8E8A70 /* UIView+Decorators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Decorators.swift"; sourceTree = "<group>"; };
-		277702533A34979D0AB0F77C660C9684 /* UIView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Add.swift"; sourceTree = "<group>"; };
-		31042812DF9592F5B1C97A61DE727270 /* HoverItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverItemView.swift; sourceTree = "<group>"; };
+		1E3F98EDB7B56466E0875A36C359FE06 /* CALayer+Decorators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CALayer+Decorators.swift"; sourceTree = "<group>"; };
+		1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-Example"; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CFF361C26C147BDB01EFC2509820FBA /* Hover.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hover.modulemap; sourceTree = "<group>"; };
+		3D0E5BA94B69D0CEBA6B5127B2F13B7B /* UIStackView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIStackView+Add.swift"; sourceTree = "<group>"; };
+		3D5B8E890E11174383CD7C36292F634D /* UISpringTimingParameters+Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Init.swift"; sourceTree = "<group>"; };
 		3D6746E07DAA8BF046F4230C613B314E /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3F7E7788FD04F162D35C67F94D0AF193 /* Hover-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hover-umbrella.h"; sourceTree = "<group>"; };
-		41CDD5FB710EEB67F09983EFE45ECEEC /* HoverColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverColor.swift; sourceTree = "<group>"; };
-		46F46417BD362809D5EA2BA93AE23403 /* UIStackView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIStackView+Add.swift"; sourceTree = "<group>"; };
-		4B772F33279B6BA44B3F1EA09792D3AB /* Orientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
-		4B87B17B79FAF4483EF815D4CDFAF85B /* HoverConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverConfiguration.swift; sourceTree = "<group>"; };
-		5022FAC85616337D4163367733A27644 /* UISpringTimingParameters+Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Init.swift"; sourceTree = "<group>"; };
+		4710D813756C8406EDF93DD5F73927F5 /* HoverButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
+		4A327B166BDDBE3B05639E7FEE435D1D /* Hover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hover.debug.xcconfig; sourceTree = "<group>"; };
+		4F913715DC45CF0979618B018A101FAF /* CGPoint+Distance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		50FC1EB5B07D1CE8E6A92F2CE6A1924B /* HoverColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverColor.swift; sourceTree = "<group>"; };
 		53A341026EB50DB44BD6D7600982D503 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
 		5A10118860486B1C21B46B8EC8C08425 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
-		62937AF8AC1DB7DA3FE4B60CB69E21B3 /* HoverPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverPosition.swift; sourceTree = "<group>"; };
+		5BA3E0B339E6A9A50EBA3626327133E9 /* Calculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		763B5F5D6D7214D56B655DE87625A480 /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		767BFE2EBE19D1FD24ADF094508A15B1 /* Calculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		7791A4DFACAFB26E01A27D63A691A472 /* Hover.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hover.xcconfig; sourceTree = "<group>"; };
-		847ACD3DD9DA5D9505383E21769469CE /* libHover.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHover.a; path = libHover.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		848BE10D1FBA8340E2477F9A64688992 /* Hover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hover-dummy.m"; sourceTree = "<group>"; };
-		8A818DA832B38C28BE1E8C3E96E077EC /* Anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		76EB10A0B441E4CD9B017218FD39BDD6 /* HoverItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverItemView.swift; sourceTree = "<group>"; };
+		8090FD27425CD4ED42DF7AD70156829D /* HoverConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverConfiguration.swift; sourceTree = "<group>"; };
+		8204198FC33E7655972411EA89DC8D57 /* Anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		847ACD3DD9DA5D9505383E21769469CE /* Hover */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = Hover; path = libHover.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		855E70CFCAB8DC009BAD0702F6B4C407 /* CGRect+Center.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
+		9A185421C76A6584E1378601F8EF7F3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		9A3D778F0C0BA5A11B556A6026C20B46 /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9A8BC4CE72A41A90356C6098C5A88AF7 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		9B35E5990466EF43AF18769BF368B6BE /* CGPoint+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
+		9AB352D2E153C830C819664167994BF7 /* Hover-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hover-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A5673257584C2B744DD58E20C76529C5 /* HoverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverItem.swift; sourceTree = "<group>"; };
-		A7798E705CA3C1B0F0B9ECA937B7BB96 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		ABF79BF61C9FA52D348885557E7DF628 /* DimView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
-		B40622911DFD4A72389368409695ACFF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		C2088447B9F059D296B03F6E63B900BD /* CALayer+Decorators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CALayer+Decorators.swift"; sourceTree = "<group>"; };
-		CF9C6A0E9B8C982C3A81737E55D6542C /* CGPoint+Distance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
-		D0DA85012034537DA8C471DBCAC11D00 /* Hover.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hover.modulemap; sourceTree = "<group>"; };
-		F5448407C9B1CDE3418708C1A91027E4 /* Hover.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Hover.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FA9983369CA5BF721FB4B0DD7960B8E6 /* HoverButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
-		FA9A4A425FCC093A829869D5684AA413 /* CGRect+Center.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
-		FBAB2AF3530FE368B5494C5B71DBA12B /* Hover-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hover-prefix.pch"; sourceTree = "<group>"; };
+		AE05012CA28344E05CEFAACDE30455A9 /* HoverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
+		B4D96A375756233E8CEA5F7AAB359B98 /* UIView+Add.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Add.swift"; sourceTree = "<group>"; };
+		BF3A0F9F8660A86565F7F4D3C2D8DBE5 /* CGPoint+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
+		C25EAFC1CAB1DBA0318C2DE6C728C183 /* Hover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hover.release.xcconfig; sourceTree = "<group>"; };
+		C335503CD88311F3892E080831B801EC /* Hover-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hover-umbrella.h"; sourceTree = "<group>"; };
+		CA524E053A477525D1F113186C422C69 /* DimView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
+		CB65538CCF8EE7B7F2C27DC7C791DDF1 /* UIView+Decorators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Decorators.swift"; sourceTree = "<group>"; };
+		D22E810309B046E449FF2AE87131181A /* Hover.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Hover.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D35A444F6CEA8E9A8F633FF47F7F59AA /* NSObject+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSObject+Create.swift"; sourceTree = "<group>"; };
+		F3A788CE5729FFADF21490E27F82B532 /* HoverPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HoverPosition.swift; sourceTree = "<group>"; };
+		FA70948686172AE72AA149A58DBDCB32 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41727C3318962E814AD1CCD52DDD0642 /* Frameworks */ = {
+		C4277C8C301E9181DA76BA2B09F2F6FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59408D25EFFE8CD29EB48268446B0C47 /* Frameworks */ = {
+		F1B5A5A386A56261504BA532E4461EF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,14 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2AC2744CD970E3DEB379053FFA25ADE2 /* Pod */ = {
+		24E88DAEAE247265DE546BBEF10604C0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F5448407C9B1CDE3418708C1A91027E4 /* Hover.podspec */,
-				A7798E705CA3C1B0F0B9ECA937B7BB96 /* LICENSE */,
-				B40622911DFD4A72389368409695ACFF /* README.md */,
+				1E3F98EDB7B56466E0875A36C359FE06 /* CALayer+Decorators.swift */,
+				4F913715DC45CF0979618B018A101FAF /* CGPoint+Distance.swift */,
+				BF3A0F9F8660A86565F7F4D3C2D8DBE5 /* CGPoint+Operators.swift */,
+				855E70CFCAB8DC009BAD0702F6B4C407 /* CGRect+Center.swift */,
+				D35A444F6CEA8E9A8F633FF47F7F59AA /* NSObject+Create.swift */,
+				3D5B8E890E11174383CD7C36292F634D /* UISpringTimingParameters+Init.swift */,
+				3D0E5BA94B69D0CEBA6B5127B2F13B7B /* UIStackView+Add.swift */,
+				B4D96A375756233E8CEA5F7AAB359B98 /* UIView+Add.swift */,
+				CB65538CCF8EE7B7F2C27DC7C791DDF1 /* UIView+Decorators.swift */,
 			);
-			name = Pod;
+			name = Extensions;
+			path = Hover/Extensions;
 			sourceTree = "<group>";
 		};
 		45BF6390E4DB7E143C827E9EE4118525 /* Targets Support Files */ = {
@@ -120,76 +128,51 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		47A9D8EC727A7FED478C9218BB31D41F /* Hover */ = {
+		6D2DD3765E37186B05219AF8C640BB3F /* Hover */ = {
 			isa = PBXGroup;
 			children = (
-				7D2C5B5FCCC4FE57AE6BECB546D53572 /* Extensions */,
-				965AFD13BF632EA29C01CE905CCE79A6 /* Helpers */,
-				938167B9652BB09DE3C285CE180458B2 /* Model */,
-				2AC2744CD970E3DEB379053FFA25ADE2 /* Pod */,
-				CA24658519A1A0B753745709A6E6184C /* Support Files */,
-				9D8910830719F23ACA3B0715100A25FA /* UI */,
+				24E88DAEAE247265DE546BBEF10604C0 /* Extensions */,
+				D0632365A3E94E01687BA709EF6B3EC5 /* Helpers */,
+				ADEB95953F0867536CBF722B9E797132 /* Model */,
+				6E3DCE8FF23B7AE6C8765E25AC36BB7A /* Pod */,
+				F96D9447FDECDA52DD8D12B7F2D00F6D /* Support Files */,
+				B6F88498BD63AD5E06CB218E60CE796E /* UI */,
 			);
 			name = Hover;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		72DA05EBE74C62294F426320339AC3D4 /* Products */ = {
+		6E3DCE8FF23B7AE6C8765E25AC36BB7A /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				847ACD3DD9DA5D9505383E21769469CE /* libHover.a */,
-				1F667CC0E19EAF34E5A4119E2121F585 /* libPods-Example.a */,
+				D22E810309B046E449FF2AE87131181A /* Hover.podspec */,
+				9A185421C76A6584E1378601F8EF7F3B /* LICENSE */,
+				FA70948686172AE72AA149A58DBDCB32 /* README.md */,
 			);
-			name = Products;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7D2C5B5FCCC4FE57AE6BECB546D53572 /* Extensions */ = {
+		ADEB95953F0867536CBF722B9E797132 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C2088447B9F059D296B03F6E63B900BD /* CALayer+Decorators.swift */,
-				CF9C6A0E9B8C982C3A81737E55D6542C /* CGPoint+Distance.swift */,
-				9B35E5990466EF43AF18769BF368B6BE /* CGPoint+Operators.swift */,
-				FA9A4A425FCC093A829869D5684AA413 /* CGRect+Center.swift */,
-				03C557B59AE7710FE23363EAABA8A7CC /* NSObject+Create.swift */,
-				5022FAC85616337D4163367733A27644 /* UISpringTimingParameters+Init.swift */,
-				46F46417BD362809D5EA2BA93AE23403 /* UIStackView+Add.swift */,
-				277702533A34979D0AB0F77C660C9684 /* UIView+Add.swift */,
-				23F0683CF412E74DD02DEF439F8E8A70 /* UIView+Decorators.swift */,
-			);
-			name = Extensions;
-			path = Hover/Extensions;
-			sourceTree = "<group>";
-		};
-		938167B9652BB09DE3C285CE180458B2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8A818DA832B38C28BE1E8C3E96E077EC /* Anchor.swift */,
-				41CDD5FB710EEB67F09983EFE45ECEEC /* HoverColor.swift */,
-				4B87B17B79FAF4483EF815D4CDFAF85B /* HoverConfiguration.swift */,
-				A5673257584C2B744DD58E20C76529C5 /* HoverItem.swift */,
-				62937AF8AC1DB7DA3FE4B60CB69E21B3 /* HoverPosition.swift */,
-				4B772F33279B6BA44B3F1EA09792D3AB /* Orientation.swift */,
+				8204198FC33E7655972411EA89DC8D57 /* Anchor.swift */,
+				50FC1EB5B07D1CE8E6A92F2CE6A1924B /* HoverColor.swift */,
+				8090FD27425CD4ED42DF7AD70156829D /* HoverConfiguration.swift */,
+				107193AA7A3FD573FB6A41BB7FE38EC1 /* HoverItem.swift */,
+				F3A788CE5729FFADF21490E27F82B532 /* HoverPosition.swift */,
+				00C164EFF1C3736226D30D72685EE404 /* Orientation.swift */,
 			);
 			name = Model;
 			path = Hover/Model;
 			sourceTree = "<group>";
 		};
-		965AFD13BF632EA29C01CE905CCE79A6 /* Helpers */ = {
+		B6F88498BD63AD5E06CB218E60CE796E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				767BFE2EBE19D1FD24ADF094508A15B1 /* Calculator.swift */,
-			);
-			name = Helpers;
-			path = Hover/Helpers;
-			sourceTree = "<group>";
-		};
-		9D8910830719F23ACA3B0715100A25FA /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				ABF79BF61C9FA52D348885557E7DF628 /* DimView.swift */,
-				FA9983369CA5BF721FB4B0DD7960B8E6 /* HoverButton.swift */,
-				31042812DF9592F5B1C97A61DE727270 /* HoverItemView.swift */,
-				171A829A80FB50CC81D798CE4FBFCDB7 /* HoverView.swift */,
+				CA524E053A477525D1F113186C422C69 /* DimView.swift */,
+				4710D813756C8406EDF93DD5F73927F5 /* HoverButton.swift */,
+				76EB10A0B441E4CD9B017218FD39BDD6 /* HoverItemView.swift */,
+				AE05012CA28344E05CEFAACDE30455A9 /* HoverView.swift */,
 			);
 			name = UI;
 			path = Hover/UI;
@@ -198,22 +181,9 @@
 		BEA3A86F8704E1818CB2A6D7F4AB5BDF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				47A9D8EC727A7FED478C9218BB31D41F /* Hover */,
+				6D2DD3765E37186B05219AF8C640BB3F /* Hover */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		CA24658519A1A0B753745709A6E6184C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0DA85012034537DA8C471DBCAC11D00 /* Hover.modulemap */,
-				7791A4DFACAFB26E01A27D63A691A472 /* Hover.xcconfig */,
-				848BE10D1FBA8340E2477F9A64688992 /* Hover-dummy.m */,
-				FBAB2AF3530FE368B5494C5B71DBA12B /* Hover-prefix.pch */,
-				3F7E7788FD04F162D35C67F94D0AF193 /* Hover-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Hover";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -222,9 +192,18 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BEA3A86F8704E1818CB2A6D7F4AB5BDF /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				72DA05EBE74C62294F426320339AC3D4 /* Products */,
+				FAE60E7B23D09B72CD0DB5238CB00872 /* Products */,
 				45BF6390E4DB7E143C827E9EE4118525 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D0632365A3E94E01687BA709EF6B3EC5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3E0B339E6A9A50EBA3626327133E9 /* Calculator.swift */,
+			);
+			name = Helpers;
+			path = Hover/Helpers;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -249,22 +228,45 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
+		F96D9447FDECDA52DD8D12B7F2D00F6D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CFF361C26C147BDB01EFC2509820FBA /* Hover.modulemap */,
+				0D97DCBAC39FEA1A7437F1DEE78D93A2 /* Hover-dummy.m */,
+				9AB352D2E153C830C819664167994BF7 /* Hover-prefix.pch */,
+				C335503CD88311F3892E080831B801EC /* Hover-umbrella.h */,
+				4A327B166BDDBE3B05639E7FEE435D1D /* Hover.debug.xcconfig */,
+				C25EAFC1CAB1DBA0318C2DE6C728C183 /* Hover.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Hover";
+			sourceTree = "<group>";
+		};
+		FAE60E7B23D09B72CD0DB5238CB00872 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847ACD3DD9DA5D9505383E21769469CE /* Hover */,
+				1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A6397AF3F40489E7A53B220B82D7BCDF /* Headers */ = {
+		531760EF76AF44C3123748BEC9CDEA57 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3109FBC17B216A2608B98A79FF30E7E7 /* Pods-Example-umbrella.h in Headers */,
+				2E2B9A4DE366AEA2DB47D1D94C102575 /* Hover-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5A8FF89472F4F333AAA8BB1782E0348 /* Headers */ = {
+		59274627CF6091FE36BB663CB7AC33BC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D063A542FC5C0D1518175F8B8CAB6FB /* Hover-umbrella.h in Headers */,
+				E18272AE93FCE8FE325019A64220AF7A /* Pods-Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,30 +275,30 @@
 /* Begin PBXNativeTarget section */
 		0AEE99A309977BD12A049FF48AF9BA4B /* Pods-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0993D17C227941D5A965101A2816CED /* Build configuration list for PBXNativeTarget "Pods-Example" */;
+			buildConfigurationList = 2BF73D26497384F6DCBC22D6986B0E75 /* Build configuration list for PBXNativeTarget "Pods-Example" */;
 			buildPhases = (
-				A6397AF3F40489E7A53B220B82D7BCDF /* Headers */,
-				28F4B075A93708761CA0F37595469A75 /* Sources */,
-				59408D25EFFE8CD29EB48268446B0C47 /* Frameworks */,
+				59274627CF6091FE36BB663CB7AC33BC /* Headers */,
+				7431BEB735A38047A9511982E3D93BA6 /* Sources */,
+				F1B5A5A386A56261504BA532E4461EF2 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0429F3969B33D3692AF9FD41A7FD1C8D /* PBXTargetDependency */,
+				97D87E76605B50333F9608A4BB3E7805 /* PBXTargetDependency */,
 			);
 			name = "Pods-Example";
 			productName = "Pods-Example";
-			productReference = 1F667CC0E19EAF34E5A4119E2121F585 /* libPods-Example.a */;
+			productReference = 1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5DC8654BEC6CF98599D3E999827B1258 /* Hover */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7737279FB4A345630621970E18F0D23C /* Build configuration list for PBXNativeTarget "Hover" */;
+			buildConfigurationList = 39B7F0ADB89BAB6755666CA9565EB322 /* Build configuration list for PBXNativeTarget "Hover" */;
 			buildPhases = (
-				D5A8FF89472F4F333AAA8BB1782E0348 /* Headers */,
-				F5635BE990164B18E008BAC60EEB937B /* Sources */,
-				41727C3318962E814AD1CCD52DDD0642 /* Frameworks */,
-				3575DB0C7BBB4AC8B48ED7DAD255B2E5 /* Copy generated compatibility header */,
+				531760EF76AF44C3123748BEC9CDEA57 /* Headers */,
+				68CE9FA900677A41A43965CCF1A33E55 /* Sources */,
+				C4277C8C301E9181DA76BA2B09F2F6FE /* Frameworks */,
+				5FD112EEABB3567A76DC444A5C518AE0 /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
@@ -304,7 +306,7 @@
 			);
 			name = Hover;
 			productName = Hover;
-			productReference = 847ACD3DD9DA5D9505383E21769469CE /* libHover.a */;
+			productReference = 847ACD3DD9DA5D9505383E21769469CE /* Hover */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -313,18 +315,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				Base,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 72DA05EBE74C62294F426320339AC3D4 /* Products */;
+			productRefGroup = FAE60E7B23D09B72CD0DB5238CB00872 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -335,7 +338,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3575DB0C7BBB4AC8B48ED7DAD255B2E5 /* Copy generated compatibility header */ = {
+		5FD112EEABB3567A76DC444A5C518AE0 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,61 +365,60 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		28F4B075A93708761CA0F37595469A75 /* Sources */ = {
+		68CE9FA900677A41A43965CCF1A33E55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B788B4C7F533CB89BFB743B0024B90 /* Pods-Example-dummy.m in Sources */,
+				01DD80478C21652DA3948A47A6A3EAF2 /* Anchor.swift in Sources */,
+				B651695167B1CA124859B355C7FCACE9 /* CALayer+Decorators.swift in Sources */,
+				229A78225A74DE377453BA6D2A6DF385 /* Calculator.swift in Sources */,
+				860713FD11F0FC8658E99FF094AA03C8 /* CGPoint+Distance.swift in Sources */,
+				24748E6CD97FD355FD29F033F8C49ECF /* CGPoint+Operators.swift in Sources */,
+				CE8A5E749C1610FE228242A4C1D693CC /* CGRect+Center.swift in Sources */,
+				6100CFA696B88C8F76DBD4CAE2F8E07E /* DimView.swift in Sources */,
+				87572B142803BA72ED81FD61261909E0 /* Hover-dummy.m in Sources */,
+				8901FAEDC51628AD5AC46320E6A23E17 /* HoverButton.swift in Sources */,
+				F4F706CAC38185CD5A87B23528A906B5 /* HoverColor.swift in Sources */,
+				62FD950FD97F00BAECD6400B4A9996CD /* HoverConfiguration.swift in Sources */,
+				9C11F1B715E906010D66F5133FAB0BED /* HoverItem.swift in Sources */,
+				F320BAE6D2D71160C55046B0407FFD90 /* HoverItemView.swift in Sources */,
+				975938F92C5788DE339E6CE7C9A2369F /* HoverPosition.swift in Sources */,
+				2D64FCE2FCD441723E06B19BFB0CDF0B /* HoverView.swift in Sources */,
+				C12290D57A999227119EF689E13348DE /* NSObject+Create.swift in Sources */,
+				EA6CF383BC669D9888A874928BDE6FF9 /* Orientation.swift in Sources */,
+				838346E76CF274F21940FDA49D235D11 /* UISpringTimingParameters+Init.swift in Sources */,
+				966E35A6311EE32279DA482C850CF7AA /* UIStackView+Add.swift in Sources */,
+				70D379E7C0261E90A7223172D848A361 /* UIView+Add.swift in Sources */,
+				DF639891E06EB60287402E97FD1E3D2D /* UIView+Decorators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5635BE990164B18E008BAC60EEB937B /* Sources */ = {
+		7431BEB735A38047A9511982E3D93BA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68B02716D69E094C6873CA315CB66324 /* Anchor.swift in Sources */,
-				ED2F9FA8B67B5390D663ACEBE78A2D2D /* CALayer+Decorators.swift in Sources */,
-				FCC8A7B5724090AE6A97F09D74B667F6 /* Calculator.swift in Sources */,
-				FED1F3CDCF747C52F49B4AEBF7BB6851 /* CGPoint+Distance.swift in Sources */,
-				0E2DC0BCEFB6129B3C8B9E6ADDC02AB1 /* CGPoint+Operators.swift in Sources */,
-				D43ECCFCF9E53CFE1F800AB699569740 /* CGRect+Center.swift in Sources */,
-				9150320427733CD3D4A523E07FBD29D0 /* DimView.swift in Sources */,
-				98811863C4F4BF3206DB57FA7DBBDBB0 /* Hover-dummy.m in Sources */,
-				212104786D124ADE78417234712B40CE /* HoverButton.swift in Sources */,
-				AEA9F8E8E18913F8F0D4CEEAA44F25BC /* HoverColor.swift in Sources */,
-				76B26B8F648C1DD30E21698954DA07DE /* HoverConfiguration.swift in Sources */,
-				8E19FE8FEBAB88DBFB28D102EBB6CA18 /* HoverItem.swift in Sources */,
-				BB7B46030C0A6A569ED0BE86071CA438 /* HoverItemView.swift in Sources */,
-				F12743CEFE540D717BA713C7AEEE49D1 /* HoverPosition.swift in Sources */,
-				882348AEE501CD52DD2651259A45578C /* HoverView.swift in Sources */,
-				C46AA71A091C3FCDD7AC3A860CD760D4 /* NSObject+Create.swift in Sources */,
-				46A71D317C2C9C7D1B7506AE8BAEAF7B /* Orientation.swift in Sources */,
-				CB0F12D3CE4ADBB70843FA3DD4C3546C /* UISpringTimingParameters+Init.swift in Sources */,
-				C7F6322C0127A5E4759A2068C5098DA6 /* UIStackView+Add.swift in Sources */,
-				EF4FFCE6B747F1D90389D18BD3D32E3E /* UIView+Add.swift in Sources */,
-				E9184D6C51D0F5A00B597C852CC23182 /* UIView+Decorators.swift in Sources */,
+				8029D31ADA222A59DCA4AF230178B29D /* Pods-Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0429F3969B33D3692AF9FD41A7FD1C8D /* PBXTargetDependency */ = {
+		97D87E76605B50333F9608A4BB3E7805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Hover;
 			target = 5DC8654BEC6CF98599D3E999827B1258 /* Hover */;
-			targetProxy = 38988C848787F71919E7EB2CD9FDF443 /* PBXContainerItemProxy */;
+			targetProxy = 6ADB458DE96EA1C4DE39FF6E5BDAD77C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1453649A4976F2A1E9F4AA6E7C5F737B /* Release */ = {
+		4B121AF306105E17A87CB723C48561D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A8BC4CE72A41A90356C6098C5A88AF7 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -434,33 +436,62 @@
 			};
 			name = Release;
 		};
-		1BE61BA200C2E596A2F90399998EE56A /* Debug */ = {
+		4F43F55AB543DA9BD6DCC787FE441A93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D6746E07DAA8BF046F4230C613B314E /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 4A327B166BDDBE3B05639E7FEE435D1D /* Hover.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Hover/Hover-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
+				MODULEMAP_FILE = Headers/Public/Hover/Hover.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Hover;
+				PRODUCT_NAME = Hover;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		257497152829C177993B5EC99C1D227A /* Release */ = {
+		7DE1BD886C41081743E27CC83CB8AF85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C25EAFC1CAB1DBA0318C2DE6C728C183 /* Hover.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Hover/Hover-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = Headers/Public/Hover/Hover.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Hover;
+				PRODUCT_NAME = Hover;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -483,6 +514,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -517,36 +549,11 @@
 			};
 			name = Release;
 		};
-		CFF381FCA866DC29E2FB698CC8937FF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7791A4DFACAFB26E01A27D63A691A472 /* Hover.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Hover/Hover-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MODULEMAP_FILE = Headers/Public/Hover/Hover.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Hover;
-				PRODUCT_NAME = Hover;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -569,6 +576,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -607,59 +615,54 @@
 			};
 			name = Debug;
 		};
-		FD59E35C5A70C56991CF5839FD35DC53 /* Release */ = {
+		DD55CBD9E69E1D5E61BD96F7AA42F915 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7791A4DFACAFB26E01A27D63A691A472 /* Hover.xcconfig */;
+			baseConfigurationReference = 3D6746E07DAA8BF046F4230C613B314E /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Hover/Hover-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MODULEMAP_FILE = Headers/Public/Hover/Hover.modulemap;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = Hover;
-				PRODUCT_NAME = Hover;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2BF73D26497384F6DCBC22D6986B0E75 /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD55CBD9E69E1D5E61BD96F7AA42F915 /* Debug */,
+				4B121AF306105E17A87CB723C48561D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39B7F0ADB89BAB6755666CA9565EB322 /* Build configuration list for PBXNativeTarget "Hover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F43F55AB543DA9BD6DCC787FE441A93 /* Debug */,
+				7DE1BD886C41081743E27CC83CB8AF85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
-				257497152829C177993B5EC99C1D227A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7737279FB4A345630621970E18F0D23C /* Build configuration list for PBXNativeTarget "Hover" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CFF381FCA866DC29E2FB698CC8937FF2 /* Debug */,
-				FD59E35C5A70C56991CF5839FD35DC53 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F0993D17C227941D5A965101A2816CED /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BE61BA200C2E596A2F90399998EE56A /* Debug */,
-				1453649A4976F2A1E9F4AA6E7C5F737B /* Release */,
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
