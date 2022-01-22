@@ -77,10 +77,6 @@ private extension HoverItemView {
     
     func setupSubviews() {
         button.addTarget(self, action: #selector(onTapInButton), for: .touchUpInside)
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapInButton))
-        label.addGestureRecognizer(tapGesture)
-        label.isUserInteractionEnabled = true
     }
 }
 
