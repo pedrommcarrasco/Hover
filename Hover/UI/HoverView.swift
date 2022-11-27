@@ -31,7 +31,7 @@ public class HoverView: UIView {
     }
     
     // MARK: Outlets
-    private let button: HoverButton
+    let button: HoverButton
     private var itemViews = [HoverItemView]() {
         didSet {
             animateState(to: false)
