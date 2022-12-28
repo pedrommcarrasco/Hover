@@ -9,6 +9,8 @@
 import UIKit
 
 final class DimView: UIView {
+    
+    var onTap: (() -> Void)?
 
     init() {
         super.init(frame: .zero)
@@ -24,5 +26,10 @@ private extension DimView {
     
     func configure() {
         isUserInteractionEnabled = false
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
+    }
+    
+    @objc func didTap() {
+        onTap?()
     }
 }

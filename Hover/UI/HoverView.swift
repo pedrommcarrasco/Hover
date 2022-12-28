@@ -50,8 +50,9 @@ public class HoverView: UIView {
         $0.axis = .vertical
         $0.isUserInteractionEnabled = false
     }
-    private let dimView: DimView = .create {
+    private lazy var dimView: DimView = .create {
         $0.alpha = 0.0
+        $0.onTap = { [weak self] in self?.onTouchInDim() }
     }
     
     // MARK: Constraints
@@ -129,18 +130,6 @@ public class HoverView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         button.center = currentAnchor.center
-    }
-}
-
-public extension HoverView {
-    
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let hitView = super.hitTest(point, with: event)
-        if hitView == self {
-            onTouchInDim()
-            if state == .none { return nil }
-        }
-        return hitView
     }
 }
 
@@ -242,6 +231,7 @@ private extension HoverView {
 private extension HoverView {
     
     func animateState(to isOpen: Bool) {
+        dimView.isUserInteractionEnabled = isOpen
         guard self.isOpen != isOpen else { return }
         self.isOpen = isOpen
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
