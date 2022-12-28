@@ -131,8 +131,15 @@ public class HoverView: UIView {
         super.layoutSubviews()
         button.center = currentAnchor.center
     }
+    
+    public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitView = super.hitTest(point, with: event)
+        if hitView == self {
+            if state == .none { return nil }
+        }
+        return hitView
+    }
 }
-
 // MARK: - Public API
 
 public extension HoverView {
